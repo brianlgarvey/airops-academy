@@ -30,7 +30,7 @@ export const brand = {
   name: "AIRops Academy",
   tagline: "AI better — together.",
   description:
-    "A private network of operators sharing what they're actually building with AI, what's working, and what's not — week after week.",
+    "A network of operators sharing what they're actually building with AI, what's working, and what's not — week after week.",
 };
 
 export const navigation = {
@@ -48,7 +48,7 @@ export const navigation = {
 export const hero = {
   headline: "AI better — together.",
   subheadline:
-    "A private network of operators sharing what they're actually building, what's working, and what's not — week after week.",
+    "An invite-only network of operators sharing what's working, what's not, and what's next — week over week.",
   primaryCta: { label: "Request an Invite", href: "/request-invite" },
   secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   supportingLine:
