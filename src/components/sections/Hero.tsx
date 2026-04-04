@@ -2,15 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { hero } from "@/content/siteContent";
-
-const avatarColors = [
-  "bg-stone-800",
-  "bg-stone-600",
-  "bg-stone-700",
-  "bg-stone-500",
-  "bg-stone-900",
-];
 
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -22,16 +15,12 @@ export function Hero() {
       setTimeout(() => {
         setActiveIndex((i) => (i + 1) % hero.highlights.length);
         setVisible(true);
-      }, 400);
-    }, 5000);
+      }, 500);
+    }, 8000);
     return () => clearInterval(interval);
   }, []);
 
   const highlight = hero.highlights[activeIndex];
-  const initials = highlight.name
-    .split(" ")
-    .map((n) => n[0])
-    .join("");
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
@@ -77,28 +66,35 @@ export function Hero() {
           </div>
 
           {/* Right — rotating testimonial card */}
-          <div className="mt-12 lg:mt-0 lg:w-[340px] lg:flex-shrink-0">
+          <div className="mt-12 lg:mt-0 lg:w-[370px] lg:flex-shrink-0">
             <div
-              className={`transition-opacity duration-400 ${visible ? "opacity-100" : "opacity-0"}`}
+              className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
             >
+              {/* Type badge */}
+              <div className="mb-3">
+                <span
+                  className={`inline-block text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md ${
+                    highlight.type === "build"
+                      ? "bg-stone-900 text-white"
+                      : "bg-stone-200 text-stone-600"
+                  }`}
+                >
+                  {highlight.type === "build" ? "What they built" : "From the session"}
+                </span>
+              </div>
+
               {/* Speech bubble */}
               <div className="relative rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
-                {/* Bubble tail */}
-                <div className="absolute -bottom-2 left-10 h-4 w-4 rotate-45 border-b border-r border-stone-200 bg-white" />
+                <div className="absolute -bottom-2 right-12 h-4 w-4 rotate-45 border-b border-r border-stone-200 bg-white" />
 
-                <p className="text-[15px] text-stone-600 leading-relaxed italic">
+                <p className="text-[15px] text-stone-600 leading-relaxed">
                   &ldquo;{highlight.quote}&rdquo;
                 </p>
               </div>
 
-              {/* Avatar + name */}
-              <div className="mt-5 flex items-center gap-3 pl-2">
-                <div
-                  className={`flex h-10 w-10 items-center justify-center rounded-full text-[13px] font-semibold text-white ${avatarColors[activeIndex % avatarColors.length]}`}
-                >
-                  {initials}
-                </div>
-                <div>
+              {/* Avatar + name — aligned right */}
+              <div className="mt-5 flex items-center gap-3 justify-end pr-4">
+                <div className="text-right">
                   <p className="text-[14px] font-medium text-stone-900">
                     {highlight.name}
                   </p>
@@ -106,11 +102,19 @@ export function Hero() {
                     {highlight.role}
                   </p>
                 </div>
+                <Image
+                  src={highlight.avatar}
+                  alt={highlight.name}
+                  width={44}
+                  height={44}
+                  className="rounded-full object-cover"
+                  unoptimized
+                />
               </div>
             </div>
 
             {/* Dots indicator */}
-            <div className="mt-6 flex gap-1.5 pl-2">
+            <div className="mt-6 flex gap-1.5 justify-end pr-4">
               {hero.highlights.map((_, i) => (
                 <button
                   key={i}
@@ -119,7 +123,7 @@ export function Hero() {
                     setTimeout(() => {
                       setActiveIndex(i);
                       setVisible(true);
-                    }, 200);
+                    }, 300);
                   }}
                   className={`h-1.5 rounded-full transition-all ${
                     i === activeIndex
