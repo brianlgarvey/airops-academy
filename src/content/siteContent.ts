@@ -98,67 +98,31 @@ export const hero = {
 };
 
 // ---------------------------------------------------------------------------
-// 3. WHAT THIS IS
-// ---------------------------------------------------------------------------
-export const whatThisIs = {
-  sectionTitle: "Not a course. Not a webinar.",
-  sectionSubtitle:
-    "This is a weekly working session. 6\u20138 operators. One hour. Everyone brings something real.",
-  points: [
-    {
-      title: "Share what you're building",
-      description:
-        "Bring the AI workflow, tool, or experiment you're working on right now.",
-    },
-    {
-      title: "Show what's working (and what isn't)",
-      description:
-        "No curated success stories. Real results, real failures, real lessons.",
-    },
-    {
-      title: "Get feedback and perspective",
-      description:
-        "Other operators see your blind spots. You see theirs. Everyone gets sharper.",
-    },
-    {
-      title: "Leave with something useful",
-      description:
-        "Every session ends with at least one idea you can put to work immediately.",
-    },
-  ],
-};
-
-// ---------------------------------------------------------------------------
-// 4. HOW IT WORKS
+// 3. HOW IT WORKS
 // ---------------------------------------------------------------------------
 export const howItWorks = {
   sectionTitle: "How it works",
-  steps: [
+  sectionSubtitle:
+    "A weekly session with a builder group. One hour. Two rules. Everyone leaves better.",
+  rules: [
     {
-      number: 1,
-      title: "Join a session",
+      title: "If you're building something \u2192 you have to share it.",
       description:
-        "You're invited into a builder group — a private network of operators who are building with AI.",
+        "A workflow you automated. A tool you're testing. An agent you shipped. Whatever you're working on — bring it to the room.",
     },
     {
-      number: 2,
-      title: "Show your work",
+      title: "If you don't understand something \u2192 you have to ask.",
       description:
-        "Bring something real — a workflow, a prompt, an agent, an idea.",
-    },
-    {
-      number: 3,
-      title: "Learn from others",
-      description:
-        "See how other operators are actually using AI in their day-to-day work.",
-    },
-    {
-      number: 4,
-      title: "Come back next week",
-      description:
-        "Same group. New progress. The conversation compounds over time.",
+        "No pretending. No nodding along. If you're stuck or confused, that's exactly what this group is for.",
     },
   ],
+  format: {
+    title: "Then we go deep.",
+    description:
+      "Each session includes a deep dive on 1\u20132 key use cases or topics — led by advanced engineers and operators who can break it down and answer questions in real time.",
+  },
+  guarantee:
+    "Everyone leaves better. Guaranteed.",
 };
 
 // ---------------------------------------------------------------------------
@@ -375,8 +339,6 @@ export const sessionsPage = {
 
 export const requestInvitePage = {
   headline: "Request an invite",
-  intro:
-    "We're not looking for perfect answers — just a sense of how you're thinking about AI today.",
   fields: [
     { name: "name", label: "Name", type: "text" as const, required: true },
     { name: "email", label: "Email", type: "email" as const, required: true },

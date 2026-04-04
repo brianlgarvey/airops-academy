@@ -56,9 +56,6 @@ export default function RequestInvitePage() {
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900">
             {requestInvitePage.headline}
           </h1>
-          <p className="mt-4 text-lg text-stone-500 leading-relaxed">
-            {requestInvitePage.intro}
-          </p>
         </div>
 
         {/* Form */}
