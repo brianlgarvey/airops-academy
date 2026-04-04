@@ -25,7 +25,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-7">
             {navigation.links.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 className="text-[13px] text-stone-500 hover:text-stone-900 transition-colors"
               >
@@ -75,7 +75,7 @@ export function Navbar() {
           <div className="md:hidden border-t border-stone-200/60 py-4 space-y-1">
             {navigation.links.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className="block text-sm text-stone-500 hover:text-stone-900 transition-colors py-2 px-1"

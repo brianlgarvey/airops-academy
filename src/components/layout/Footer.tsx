@@ -23,7 +23,7 @@ export function Footer() {
           <div className="flex flex-wrap items-center justify-center gap-6">
             {footer.links.map((link) => (
               <Link
-                key={link.href}
+                key={link.label}
                 href={link.href}
                 className="text-[13px] text-stone-400 hover:text-stone-700 transition-colors"
               >
