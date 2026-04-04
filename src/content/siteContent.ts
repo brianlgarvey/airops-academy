@@ -103,7 +103,7 @@ export const hero = {
 export const howItWorks = {
   sectionTitle: "How it works",
   sectionSubtitle:
-    "A weekly session with a builder group. One hour. Two rules. Everyone leaves better.",
+    "A weekly session with a builder group. One hour. Two rules. Everyone leaves better, guaranteed.",
   rules: [
     {
       title: "If you're building something \u2192 you have to share it.",
