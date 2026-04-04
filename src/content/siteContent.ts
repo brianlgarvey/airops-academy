@@ -28,9 +28,9 @@
 // ---------------------------------------------------------------------------
 export const brand = {
   name: "AIRops Academy",
-  tagline: "Use AI better — together.",
+  tagline: "AI better — together.",
   description:
-    "A small group of operators sharing what they're actually building with AI, what's working, and what's not — week after week.",
+    "A private network of operators sharing what they're actually building with AI, what's working, and what's not — week after week.",
 };
 
 export const navigation = {
@@ -46,9 +46,9 @@ export const navigation = {
 // 2. HERO
 // ---------------------------------------------------------------------------
 export const hero = {
-  headline: "Use AI better — together.",
+  headline: "AI better — together.",
   subheadline:
-    "A small group of operators sharing what they're actually building, what's working, and what's not — week after week.",
+    "A private network of operators sharing what they're actually building, what's working, and what's not — week after week.",
   primaryCta: { label: "Request an Invite", href: "/request-invite" },
   secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   supportingLine:
@@ -96,7 +96,7 @@ export const howItWorks = {
       number: 1,
       title: "Join a session",
       description:
-        "You're invited into a small group of operators who are building with AI.",
+        "You're invited into a builder group — a private network of operators who are building with AI.",
     },
     {
       number: 2,
@@ -126,7 +126,7 @@ export const inviteModel = {
   sectionTitle: "Built to stay small",
   body: "You can't just sign up.",
   points: [
-    "Every session starts with a small group.",
+    "Every session starts with a builder group.",
     "If it works, you're invited back — and you can invite one other person.",
     "The goal isn't scale. It's quality.",
   ],
@@ -221,7 +221,7 @@ export const finalCta = {
 // ---------------------------------------------------------------------------
 export const footer = {
   copyright: `\u00A9 ${new Date().getFullYear()} AIRops Academy. All rights reserved.`,
-  tagline: "Use AI better \u2014 together.",
+  tagline: "AI better \u2014 together.",
   links: [
     { label: "How It Works", href: "/how-it-works" },
     { label: "Sessions", href: "/sessions" },
@@ -237,7 +237,7 @@ export const footer = {
 export const howItWorksPage = {
   headline: "How AIRops Academy works",
   intro:
-    "One hour a week. A small group of operators. Real work, real conversation, real progress.",
+    "One hour a week. A private builder group. Real work, real conversation, real progress.",
   sessionBreakdown: {
     title: "What a session looks like",
     steps: [
@@ -284,7 +284,7 @@ export const howItWorksPage = {
 export const sessionsPage = {
   headline: "Inside a session",
   intro:
-    "Every week, a small group of operators gets together to share what they're building with AI. Here's what that actually looks like.",
+    "Every week, a builder group gets together to share what they're building with AI. Here's what that actually looks like.",
   format: {
     title: "The format",
     points: [
@@ -363,7 +363,7 @@ export const aboutPage = {
     "Most AI learning is passive. You watch a tutorial. You read a thread. You try something once and move on.",
     "Most real progress comes from doing — and doing it alongside other people who are figuring out the same thing.",
     "AIRops Academy exists to close that gap.",
-    "It's a small, invite-only group of operators who meet every week to share what they're actually building with AI. Not theory. Not hype. Just real work and honest conversation.",
+    "It's a private, invite-only network of operators who meet every week to share what they're actually building with AI. Not theory. Not hype. Just real work and honest conversation.",
     "We built this because learning is faster when you're surrounded by other people doing the same kind of work. When someone shares a workflow that's working, you can adapt it. When someone hits a wall, you can help — or avoid the same mistake.",
     "This isn't a course. It's a room full of people who are all trying to get better at the same thing — and willing to share what they're learning along the way.",
   ],
