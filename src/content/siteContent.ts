@@ -3,19 +3,23 @@
  * AIRops Academy — Centralized Site Content & Configuration
  * ============================================================================
  *
- * COMMUNITY-FIRST HOMEPAGE MOCKUP
- *
- * SECTIONS:
+ * HOMEPAGE SECTIONS:
  *  1. Brand & Navigation
  *  2. Hero
- *  3. What This Is / How It Works
- *  4. What Happens in a Session
- *  5. The Path / Maturity Model
- *  6. What Is AIRops?
- *  7. Why We Built This
- *  8. Social Proof
+ *  3. What This Is
+ *  4. How It Works
+ *  5. Invite Model
+ *  6. Who This Is For
+ *  7. What People Are Sharing
+ *  8. Experience
  *  9. Final CTA
  * 10. Footer
+ *
+ * SUPPORTING PAGES:
+ *  - How It Works (deeper)
+ *  - Sessions
+ *  - Request an Invite
+ *  - About
  * ============================================================================
  */
 
@@ -24,240 +28,180 @@
 // ---------------------------------------------------------------------------
 export const brand = {
   name: "AIRops Academy",
-  tagline: "Learn AI by building alongside other operators",
+  tagline: "Use AI better — together.",
   description:
-    "A community for operators, builders, and AI-curious professionals learning AI together through small, informal study groups.",
+    "A small group of operators sharing what they're actually building with AI, what's working, and what's not — week after week.",
 };
 
 export const navigation = {
   links: [
-    { label: "Study Groups", href: "#study-groups" },
-    { label: "Workshops", href: "#path" },
-    { label: "Community", href: "#community" },
-    { label: "What is AIRops?", href: "#airops" },
+    { label: "How It Works", href: "/how-it-works" },
+    { label: "Sessions", href: "/sessions" },
+    { label: "About", href: "/about" },
   ],
-  cta: { label: "Request an Invite", href: "#request-invite" },
+  cta: { label: "Request an Invite", href: "/request-invite" },
 };
 
 // ---------------------------------------------------------------------------
 // 2. HERO
 // ---------------------------------------------------------------------------
 export const hero = {
-  headline: "Learn AI by building alongside other operators",
+  headline: "Use AI better — together.",
   subheadline:
-    "Join a small, informal study group where builders, operators, and AI-curious professionals share what they're working on, what's working, and what they're learning — in real time.",
-  primaryCta: { label: "Request an Invite", href: "#request-invite" },
-  secondaryCta: { label: "See How It Works", href: "#study-groups" },
+    "A small group of operators sharing what they're actually building, what's working, and what's not — week after week.",
+  primaryCta: { label: "Request an Invite", href: "/request-invite" },
+  secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   supportingLine:
-    "Free to join. No slides. No fluff. Just real work and real discussion.",
+    "No slides. No fluff. No theory. Just real work and real conversations.",
 };
 
 // ---------------------------------------------------------------------------
-// 3. WHAT THIS IS / HOW IT WORKS
+// 3. WHAT THIS IS
 // ---------------------------------------------------------------------------
 export const whatThisIs = {
-  sectionTitle: "What this actually is",
+  sectionTitle: "Not a course. Not a webinar.",
   sectionSubtitle:
-    "A small group of people who meet regularly to share what they're learning about AI — and help each other get better at applying it.",
+    "This is a weekly working session. 6\u20138 operators. One hour. Everyone brings something real.",
   points: [
     {
-      title: "Small groups",
+      title: "Share what you're building",
       description:
-        "Typically 6–10 people. Enough to get diverse perspectives, small enough that everyone gets heard.",
+        "Bring the AI workflow, tool, or experiment you're working on right now.",
     },
     {
-      title: "Informal format",
+      title: "Show what's working (and what isn't)",
       description:
-        "No curriculum. No homework. No prep required. Show up, share what you're working on, ask questions, learn from others.",
+        "No curated success stories. Real results, real failures, real lessons.",
     },
     {
-      title: "Real work, real discussion",
+      title: "Get feedback and perspective",
       description:
-        "Bring a workflow you're automating, a tool you're evaluating, or a problem you're stuck on. Or just listen and learn.",
+        "Other operators see your blind spots. You see theirs. Everyone gets sharper.",
     },
     {
-      title: "Ongoing and evolving",
+      title: "Leave with something useful",
       description:
-        "Groups meet on a recurring cadence. The conversation builds over time as people go deeper.",
+        "Every session ends with at least one idea you can put to work immediately.",
     },
   ],
 };
 
 // ---------------------------------------------------------------------------
-// 4. WHAT HAPPENS IN A SESSION
+// 4. HOW IT WORKS
 // ---------------------------------------------------------------------------
-export const sessionTopics = {
-  sectionTitle: "What happens in a session",
-  sectionSubtitle:
-    "Here's the kind of thing people actually talk about. No theory decks. No abstract case studies. Just operators sharing real work.",
-  topics: [
+export const howItWorks = {
+  sectionTitle: "How it works",
+  steps: [
     {
-      title: "Comparing AI tools",
+      number: 1,
+      title: "Join a session",
       description:
-        "Claude vs. ChatGPT vs. Gemini — what's actually better for different kinds of work, and why.",
-      tag: "Tools",
+        "You're invited into a small group of operators who are building with AI.",
     },
     {
-      title: "Sharing workflows",
+      number: 2,
+      title: "Show your work",
       description:
-        "Someone walks through how they automated part of their onboarding process using AI. Others ask questions, poke holes, suggest improvements.",
-      tag: "Workflows",
+        "Bring something real — a workflow, a prompt, an agent, an idea.",
     },
     {
-      title: "Context management",
+      number: 3,
+      title: "Learn from others",
       description:
-        "How to deal with context windows, context sprawl, and getting AI to actually understand your business.",
-      tag: "Technique",
+        "See how other operators are actually using AI in their day-to-day work.",
     },
     {
-      title: "Automating real tasks",
+      number: 4,
+      title: "Come back next week",
       description:
-        "Taking a repetitive piece of work — data cleanup, meeting prep, reporting — and figuring out how to hand part of it to AI.",
-      tag: "Automation",
-    },
-    {
-      title: "Building internal tools",
-      description:
-        "Someone built a small app using an AI coding assistant. They demo it, explain what went wrong, and what they'd do differently.",
-      tag: "Building",
-    },
-    {
-      title: "Honest conversation",
-      description:
-        "What's actually working. What's overhyped. Where AI falls short. No hype, no sales pitch — just signal.",
-      tag: "Discussion",
+        "Same group. New progress. The conversation compounds over time.",
     },
   ],
 };
 
 // ---------------------------------------------------------------------------
-// 5. THE PATH / MATURITY MODEL
+// 5. INVITE MODEL
 // ---------------------------------------------------------------------------
-export const thePath = {
-  sectionTitle: "Start free. Go deeper when you're ready.",
-  sectionSubtitle:
-    "There's no pressure to buy anything. Start with a study group. If you want more structure later, it's there.",
-  stages: [
+export const inviteModel = {
+  sectionTitle: "Built to stay small",
+  body: "You can't just sign up.",
+  points: [
+    "Every session starts with a small group.",
+    "If it works, you're invited back — and you can invite one other person.",
+    "The goal isn't scale. It's quality.",
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 6. WHO THIS IS FOR
+// ---------------------------------------------------------------------------
+export const whoThisIsFor = {
+  sectionTitle: "This is for operators",
+  forYou: [
+    "You're already using AI in your work",
+    "You want to get better — fast",
+    "You care about practical application, not theory",
+    "You're willing to share what you're working on",
+  ],
+  notForYou: [
+    "You're just getting started with AI",
+    "You're looking for a structured course",
+    "You prefer passive learning",
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// 7. WHAT PEOPLE ARE SHARING
+// ---------------------------------------------------------------------------
+export const whatPeopleAreSharing = {
+  sectionTitle: "What people are actually working on",
+  items: [
     {
-      title: "Study Groups",
-      subtitle: "Free",
+      title: "Building internal tools with Claude Code",
       description:
-        "Join a small group of operators learning AI together. Meet regularly, share what you're building, learn from each other.",
-      status: "Start here",
-      features: [
-        "Small group format (6–10 people)",
-        "Recurring sessions",
-        "No cost, no commitment",
-        "Bring your own questions and projects",
-      ],
+        "An ops lead walks through the internal dashboard they built in a weekend — no engineering team needed.",
     },
     {
-      title: "Community",
-      subtitle: "Free",
+      title: "Automating outbound workflows",
       description:
-        "Stay connected between sessions. Share resources, ask questions, and keep the conversation going with operators who get it.",
-      status: "Keep going",
-      features: [
-        "Ongoing async discussion",
-        "Shared resources and workflows",
-        "Connect with other operators",
-        "Stay in the loop on what's working",
-      ],
+        "A RevOps manager shows how they cut manual outreach prep from 2 hours to 15 minutes.",
     },
     {
-      title: "Workshops",
-      subtitle: "Paid",
+      title: "Structuring context for better outputs",
       description:
-        "Focused, hands-on learning experiences for when you want to go deeper on a specific skill or workflow.",
-      status: "Go deeper",
-      features: [
-        "Structured, hands-on sessions",
-        "Specific skills and outcomes",
-        "Expert-led instruction",
-        "Build something real",
-      ],
+        "How one operator got their AI assistant to finally understand their business by rethinking context.",
+    },
+    {
+      title: "Creating AI-powered proposals",
+      description:
+        "A consultant demos their prompt chain that drafts client proposals from call notes.",
+    },
+    {
+      title: "Connecting data across systems",
+      description:
+        "Someone built an AI layer that pulls from HubSpot, Notion, and Slack to generate weekly reports.",
+    },
+    {
+      title: "Evaluating what actually works",
+      description:
+        "Honest conversation about what's overhyped, what's underrated, and where AI still falls short.",
     },
   ],
 };
 
 // ---------------------------------------------------------------------------
-// 6. WHAT IS AIROPS?
+// 8. EXPERIENCE
 // ---------------------------------------------------------------------------
-export const whatIsAirops = {
-  sectionTitle: "What is AIRops?",
-  sectionSubtitle:
-    "AIRops is the shift from experimenting with AI to designing systems where AI is embedded into real workflows.",
+export const experience = {
+  sectionTitle: "What it feels like",
+  lines: [
+    "It's not polished.",
+    "It's not perfect.",
+    "It's real.",
+  ],
   paragraphs: [
-    "Most people are still in the experimentation phase. They've tried ChatGPT. Maybe they've built a few prompts. But AI isn't yet woven into how they actually work.",
-    "AIRops is what comes next: the practice of integrating AI into operations — thoughtfully, safely, and in ways that actually stick.",
-    "It's not about replacing people. It's about giving operators better tools and better judgment about when and how to use them.",
-  ],
-  pillars: [
-    {
-      title: "From experiment to system",
-      description:
-        "Move past one-off prompts toward repeatable workflows where AI plays a defined role.",
-    },
-    {
-      title: "Operator-led, not vendor-led",
-      description:
-        "The people closest to the work should be the ones designing how AI fits into it.",
-    },
-    {
-      title: "Safe by default",
-      description:
-        "Read before you write. Check before you act. Build AI into workflows with guardrails, not shortcuts.",
-    },
-  ],
-};
-
-// ---------------------------------------------------------------------------
-// 7. WHY WE BUILT THIS
-// ---------------------------------------------------------------------------
-export const whyWeBuiltThis = {
-  sectionTitle: "Why we built this",
-  paragraphs: [
-    "Most people are trying to figure out AI alone. They're bouncing between tools, tutorials, YouTube videos, and half-finished experiments — with no one to compare notes with.",
-    "That's a hard way to learn. And it's slow.",
-    "We built AIRops Academy because learning is faster when you're surrounded by other people doing the same kind of work. When someone shares a workflow that's working, you can adapt it. When someone hits a wall, you can help — or avoid the same mistake.",
-    "This isn't a course. It's a room full of people who are all trying to get better at the same thing — and willing to share what they're learning along the way.",
-  ],
-};
-
-// ---------------------------------------------------------------------------
-// 8. SOCIAL PROOF / TESTIMONIALS
-// ---------------------------------------------------------------------------
-export const socialProof = {
-  sectionTitle: "What people are saying",
-  testimonials: [
-    {
-      quote:
-        "This was more useful than most webinars I've attended. Real people, real work, real conversation.",
-      name: "Sarah M.",
-      role: "RevOps Lead",
-      company: "Series B SaaS",
-    },
-    {
-      quote:
-        "I left with three ideas I wanted to try immediately. That never happens with courses.",
-      name: "James K.",
-      role: "HubSpot Admin",
-      company: "Mid-market fintech",
-    },
-    {
-      quote:
-        "It helped me understand what other operators are actually doing with AI — not what vendors say they should be doing.",
-      name: "Maria L.",
-      role: "Marketing Ops Manager",
-      company: "B2B agency",
-    },
-    {
-      quote:
-        "I stopped feeling behind. Turns out everyone is figuring this out in real time.",
-      name: "David R.",
-      role: "Solutions Consultant",
-      company: "HubSpot Partner",
-    },
+    "You'll see things that work. You'll see things that fail.",
+    "You'll leave better than you came in.",
   ],
 };
 
@@ -265,24 +209,162 @@ export const socialProof = {
 // 9. FINAL CTA
 // ---------------------------------------------------------------------------
 export const finalCta = {
-  headline: "If this sounds valuable, raise your hand.",
+  headline: "Want in?",
   subheadline:
-    "Study groups are free, informal, and designed for people who want to learn by doing — not by watching. Request an invite and we'll match you with a group.",
-  cta: { label: "Request an Invite", href: "#request-invite" },
-  supportingLine:
-    "No cost. No commitment. Just a small group of operators learning together.",
+    "Sessions are free, invite-only, and designed for operators who learn by doing — not by watching.",
+  cta: { label: "Request an Invite", href: "/request-invite" },
+  supportingLine: "We'll follow up if it's a fit.",
 };
 
 // ---------------------------------------------------------------------------
 // 10. FOOTER
 // ---------------------------------------------------------------------------
 export const footer = {
-  copyright: `© ${new Date().getFullYear()} AIRops Academy. All rights reserved.`,
-  tagline: "Learn AI by building alongside other operators.",
+  copyright: `\u00A9 ${new Date().getFullYear()} AIRops Academy. All rights reserved.`,
+  tagline: "Use AI better \u2014 together.",
   links: [
-    { label: "Study Groups", href: "#study-groups" },
-    { label: "Community", href: "#community" },
-    { label: "Workshops", href: "#path" },
-    { label: "What is AIRops?", href: "#airops" },
+    { label: "How It Works", href: "/how-it-works" },
+    { label: "Sessions", href: "/sessions" },
+    { label: "About", href: "/about" },
+    { label: "Request an Invite", href: "/request-invite" },
+  ],
+};
+
+// ---------------------------------------------------------------------------
+// SUPPORTING PAGES
+// ---------------------------------------------------------------------------
+
+export const howItWorksPage = {
+  headline: "How AIRops Academy works",
+  intro:
+    "One hour a week. A small group of operators. Real work, real conversation, real progress.",
+  sessionBreakdown: {
+    title: "What a session looks like",
+    steps: [
+      {
+        time: "5 min",
+        title: "Quick intros",
+        description: "Who's here, what you're working on this week.",
+      },
+      {
+        time: "40 min",
+        title: "Open share + discussion",
+        description:
+          "Someone shares a workflow, demo, or problem. The group digs in — questions, feedback, ideas.",
+      },
+      {
+        time: "15 min",
+        title: "Wrap + takeaways",
+        description:
+          "What stuck, what to try, what to bring back next week.",
+      },
+    ],
+  },
+  whatToBring: {
+    title: "What to bring",
+    items: [
+      "A workflow you're automating",
+      "A tool or prompt you're testing",
+      "A problem you're stuck on",
+      "A result you want to share",
+      "Or just show up and listen — that's fine too",
+    ],
+  },
+  whatToExpect: {
+    title: "What to expect",
+    items: [
+      "No presentations. No homework. No prep required.",
+      "You don't need to be an expert — just an operator who's building.",
+      "Sessions are informal. Think working lunch, not conference talk.",
+      "Same group each week. The conversation builds over time.",
+    ],
+  },
+};
+
+export const sessionsPage = {
+  headline: "Inside a session",
+  intro:
+    "Every week, a small group of operators gets together to share what they're building with AI. Here's what that actually looks like.",
+  format: {
+    title: "The format",
+    points: [
+      "6\u20138 operators per session",
+      "1 hour, same time each week",
+      "Video on, casual conversation",
+      "No slides, no decks, no formal presentations",
+    ],
+  },
+  typicalFlow: {
+    title: "A typical session",
+    items: [
+      {
+        label: "Check-in",
+        description: "Quick round — what are you working on this week?",
+      },
+      {
+        label: "Deep dive",
+        description:
+          "One or two people share something specific — a workflow, a tool, a result, a failure.",
+      },
+      {
+        label: "Group discussion",
+        description:
+          "Everyone weighs in. Questions, suggestions, \"have you tried...\" moments.",
+      },
+      {
+        label: "Takeaways",
+        description:
+          "What to try this week. What to bring back next time.",
+      },
+    ],
+  },
+  topics: {
+    title: "Topics that come up",
+    items: [
+      "Comparing AI tools for specific use cases",
+      "Automating real workflows end-to-end",
+      "Prompt engineering and context management",
+      "Building internal tools with AI coding assistants",
+      "What's actually working vs. what's overhyped",
+      "Connecting AI across systems (CRMs, docs, data)",
+    ],
+  },
+};
+
+export const requestInvitePage = {
+  headline: "Request an invite",
+  intro:
+    "We're not looking for perfect answers — just a sense of how you're thinking about AI today.",
+  fields: [
+    { name: "name", label: "Name", type: "text" as const, required: true },
+    { name: "email", label: "Email", type: "email" as const, required: true },
+    { name: "role", label: "Role / Title", type: "text" as const, required: true },
+    {
+      name: "currentUsage",
+      label: "How are you currently using AI?",
+      type: "textarea" as const,
+      required: true,
+    },
+    {
+      name: "goals",
+      label: "What would you want to share or learn?",
+      type: "textarea" as const,
+      required: false,
+    },
+  ],
+  submitLabel: "Submit Request",
+  successMessage:
+    "Thanks for your interest. We'll follow up if it's a fit.",
+};
+
+export const aboutPage = {
+  headline: "Why this exists",
+  paragraphs: [
+    "Most AI learning is passive. You watch a tutorial. You read a thread. You try something once and move on.",
+    "Most real progress comes from doing — and doing it alongside other people who are figuring out the same thing.",
+    "AIRops Academy exists to close that gap.",
+    "It's a small, invite-only group of operators who meet every week to share what they're actually building with AI. Not theory. Not hype. Just real work and honest conversation.",
+    "We built this because learning is faster when you're surrounded by other people doing the same kind of work. When someone shares a workflow that's working, you can adapt it. When someone hits a wall, you can help — or avoid the same mistake.",
+    "This isn't a course. It's a room full of people who are all trying to get better at the same thing — and willing to share what they're learning along the way.",
   ],
 };

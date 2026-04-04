@@ -1,8 +1,9 @@
+import Link from "next/link";
 import { finalCta } from "@/content/siteContent";
 
 export function FinalCta() {
   return (
-    <section id="request-invite" className="py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-stone-100/50">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900">
@@ -13,7 +14,7 @@ export function FinalCta() {
           </p>
 
           <div className="mt-10">
-            <a
+            <Link
               href={finalCta.cta.href}
               className="inline-flex items-center justify-center rounded-lg bg-stone-900 px-8 py-3.5 text-[15px] font-medium text-white hover:bg-stone-700 transition-all"
             >
@@ -31,7 +32,7 @@ export function FinalCta() {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
 
           <p className="mt-5 text-[14px] text-stone-400">

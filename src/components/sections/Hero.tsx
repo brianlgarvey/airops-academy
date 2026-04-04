@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { hero } from "@/content/siteContent";
 
 export function Hero() {
@@ -16,13 +17,13 @@ export function Hero() {
           </p>
 
           {/* Supporting line */}
-          <p className="mt-5 text-[15px] text-stone-400">
+          <p className="mt-5 text-[15px] text-stone-400 font-medium">
             {hero.supportingLine}
           </p>
 
           {/* CTAs */}
           <div className="mt-10 flex flex-col sm:flex-row gap-3">
-            <a
+            <Link
               href={hero.primaryCta.href}
               className="inline-flex items-center justify-center rounded-lg bg-stone-900 px-7 py-3 text-[15px] font-medium text-white hover:bg-stone-700 transition-all"
             >
@@ -40,13 +41,13 @@ export function Hero() {
                   d="M13 7l5 5m0 0l-5 5m5-5H6"
                 />
               </svg>
-            </a>
-            <a
+            </Link>
+            <Link
               href={hero.secondaryCta.href}
               className="inline-flex items-center justify-center rounded-lg border border-stone-300 px-7 py-3 text-[15px] font-medium text-stone-600 hover:border-stone-400 hover:text-stone-900 transition-all"
             >
               {hero.secondaryCta.label}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

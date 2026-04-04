@@ -22,13 +22,13 @@ export function Footer() {
           {/* Links */}
           <div className="flex flex-wrap items-center justify-center gap-6">
             {footer.links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-[13px] text-stone-400 hover:text-stone-700 transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
         </div>

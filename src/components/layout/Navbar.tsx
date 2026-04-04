@@ -24,20 +24,20 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-7">
             {navigation.links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="text-[13px] text-stone-500 hover:text-stone-900 transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
+            <Link
               href={navigation.cta.href}
               className="rounded-lg bg-stone-900 px-4 py-2 text-[13px] font-medium text-white hover:bg-stone-700 transition-colors"
             >
               {navigation.cta.label}
-            </a>
+            </Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -74,22 +74,22 @@ export function Navbar() {
         {mobileOpen && (
           <div className="md:hidden border-t border-stone-200/60 py-4 space-y-1">
             {navigation.links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setMobileOpen(false)}
                 className="block text-sm text-stone-500 hover:text-stone-900 transition-colors py-2 px-1"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
-            <a
+            <Link
               href={navigation.cta.href}
               onClick={() => setMobileOpen(false)}
               className="block w-full rounded-lg bg-stone-900 px-4 py-2.5 text-center text-sm font-medium text-white hover:bg-stone-700 transition-colors mt-3"
             >
               {navigation.cta.label}
-            </a>
+            </Link>
           </div>
         )}
       </div>

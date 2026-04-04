@@ -15,13 +15,13 @@ export const metadata: Metadata = {
   description: brand.description,
   keywords: [
     "AI",
-    "study group",
     "operators",
-    "RevOps",
-    "HubSpot",
-    "AI learning",
+    "AI sessions",
+    "working sessions",
+    "invite-only",
     "AIRops",
-    "community",
+    "AI workflows",
+    "AI for operators",
   ],
 };
 
