@@ -35,9 +35,9 @@ export const brand = {
 
 export const navigation = {
   links: [
-    { label: "How It Works", href: "/how-it-works" },
-    { label: "Sessions", href: "/sessions" },
-    { label: "About", href: "/about" },
+    { label: "How It Works", href: "#how-it-works" },
+    { label: "Community", href: "#" },
+    { label: "Workshops", href: "#" },
   ],
   cta: { label: "Request an Invite", href: "/request-invite" },
 };
