@@ -25,7 +25,7 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-center lg:gap-16">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:gap-16">
           {/* Left — copy */}
           <div className="max-w-2xl lg:flex-1">
             <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] font-semibold tracking-tight leading-[1.1] text-stone-900">
@@ -84,16 +84,16 @@ export function Hero() {
               </div>
 
               {/* Speech bubble */}
-              <div className="relative rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
+              <div className="relative rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
                 <div className="absolute -bottom-2 right-12 h-4 w-4 rotate-45 border-b border-r border-stone-200 bg-white" />
 
-                <p className="text-[15px] text-stone-600 leading-relaxed">
+                <p className="text-[14px] text-stone-600 leading-relaxed">
                   &ldquo;{highlight.quote}&rdquo;
                 </p>
               </div>
 
               {/* Avatar + name — aligned right */}
-              <div className="mt-5 flex items-center gap-3 justify-end pr-4">
+              <div className="mt-4 flex items-center gap-3 justify-end pr-4">
                 <div className="text-right">
                   <p className="text-[14px] font-medium text-stone-900">
                     {highlight.name}

@@ -2,7 +2,7 @@ import { whatThisIs } from "@/content/siteContent";
 
 export function WhatThisIs() {
   return (
-    <section id="study-groups" className="py-20 md:py-28">
+    <section id="study-groups" className="py-20 md:py-28 bg-stone-100/60 border-y border-stone-200/60">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="max-w-2xl mb-14">
