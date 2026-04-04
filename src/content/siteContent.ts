@@ -51,8 +51,33 @@ export const hero = {
     "An invite-only network of operators sharing what's working, what's not, and what's next — week over week.",
   primaryCta: { label: "Request an Invite", href: "/request-invite" },
   secondaryCta: { label: "See How It Works", href: "/how-it-works" },
-  supportingLine:
-    "No slides. No fluff. No theory. Just real work and real conversations.",
+  highlights: [
+    {
+      quote: "I built an internal client dashboard in a weekend. No engineers. No tickets. Just shipped it.",
+      name: "Sarah M.",
+      role: "Ops Lead",
+    },
+    {
+      quote: "I stopped guessing which AI tools to use. Someone in the group had already tested all of them.",
+      name: "James K.",
+      role: "RevOps Manager",
+    },
+    {
+      quote: "Automated 2 hours of outbound prep down to 15 minutes. Walked through the whole workflow live.",
+      name: "Maria L.",
+      role: "Growth Ops",
+    },
+    {
+      quote: "This is the only place I've found where people are actually sharing what's working — not selling you something.",
+      name: "David R.",
+      role: "Solutions Consultant",
+    },
+    {
+      quote: "Built a prompt chain that drafts proposals from call notes. Others in the group adapted it that same week.",
+      name: "Alex T.",
+      role: "Consultant",
+    },
+  ],
 };
 
 // ---------------------------------------------------------------------------
