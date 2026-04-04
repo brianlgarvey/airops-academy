@@ -79,7 +79,7 @@ export function Hero() {
                       : "bg-stone-200 text-stone-600"
                   }`}
                 >
-                  {highlight.type === "build" ? "What they built" : "From the session"}
+                  {highlight.type === "build" ? "What they built" : "Feedback"}
                 </span>
               </div>
 
