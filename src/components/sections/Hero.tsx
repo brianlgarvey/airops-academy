@@ -25,9 +25,9 @@ export function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row lg:items-start lg:gap-16">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:gap-20">
           {/* Left — copy */}
-          <div className="max-w-2xl lg:flex-1">
+          <div className="max-w-xl lg:flex-1">
             <h1 className="text-4xl sm:text-5xl md:text-[3.5rem] font-semibold tracking-tight leading-[1.1] text-stone-900">
               {hero.headline}
             </h1>
@@ -65,56 +65,52 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right — rotating testimonial card */}
-          <div className="mt-12 lg:mt-0 lg:w-[370px] lg:flex-shrink-0">
+          {/* Right — featured spotlight */}
+          <div className="mt-14 lg:mt-0 lg:w-[380px] lg:flex-shrink-0">
             <div
               className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
             >
-              {/* Type badge */}
-              <div className="mb-3">
+              {/* Quote at top */}
+              <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+                {/* Type badge */}
                 <span
-                  className={`inline-block text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md ${
+                  className={`inline-block text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full mb-3 ${
                     highlight.type === "build"
                       ? "bg-stone-900 text-white"
-                      : "bg-stone-200 text-stone-600"
+                      : "bg-stone-100 text-stone-500 border border-stone-200"
                   }`}
                 >
                   {highlight.type === "build" ? "What they built" : "Feedback"}
                 </span>
-              </div>
 
-              {/* Speech bubble */}
-              <div className="relative rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
-                <div className="absolute -bottom-2 right-12 h-4 w-4 rotate-45 border-b border-r border-stone-200 bg-white" />
-
-                <p className="text-[14px] text-stone-600 leading-relaxed">
+                <p className="text-[15px] text-stone-600 leading-relaxed">
                   &ldquo;{highlight.quote}&rdquo;
                 </p>
               </div>
 
-              {/* Avatar + name — aligned right */}
-              <div className="mt-4 flex items-center gap-3 justify-end pr-4">
-                <div className="text-right">
-                  <p className="text-[14px] font-medium text-stone-900">
+              {/* Face + name below */}
+              <div className="mt-5 flex items-center gap-4 justify-center">
+                <Image
+                  src={highlight.avatar}
+                  alt={highlight.name}
+                  width={140}
+                  height={140}
+                  className="rounded-full object-cover shadow-lg ring-4 ring-white"
+                  unoptimized
+                />
+                <div>
+                  <p className="text-[16px] font-semibold text-stone-900">
                     {highlight.name}
                   </p>
                   <p className="text-[13px] text-stone-400">
                     {highlight.role}
                   </p>
                 </div>
-                <Image
-                  src={highlight.avatar}
-                  alt={highlight.name}
-                  width={44}
-                  height={44}
-                  className="rounded-full object-cover"
-                  unoptimized
-                />
               </div>
             </div>
 
             {/* Dots indicator */}
-            <div className="mt-6 flex gap-1.5 justify-end pr-4">
+            <div className="mt-6 flex gap-1.5 justify-center">
               {hero.highlights.map((_, i) => (
                 <button
                   key={i}

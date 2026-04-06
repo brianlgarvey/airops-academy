@@ -103,26 +103,28 @@ export const hero = {
 export const howItWorks = {
   sectionTitle: "How it works",
   sectionSubtitle:
-    "A weekly session with a builder group. One hour. Two rules. Everyone leaves better, guaranteed.",
-  rules: [
-    {
-      title: "If you're building something \u2192 you have to share it.",
-      description:
-        "A workflow you automated. A tool you're testing. An agent you shipped. Whatever you're working on — bring it to the room.",
-    },
-    {
-      title: "If you don't understand something \u2192 you have to ask.",
-      description:
-        "No pretending. No nodding along. If you're stuck or confused, that's exactly what this group is for.",
-    },
-  ],
-  format: {
-    title: "Then we go deep.",
-    description:
-      "Each session includes a deep dive on 1\u20132 key use cases or topics — led by advanced engineers and operators who can break it down and answer questions in real time.",
+    "A weekly session with a builder group. One hour. Two parts. Everyone leaves better, guaranteed.",
+  groupDiscussion: {
+    title: "Group Discussion",
+    subtitle: "Two rules.",
+    rules: [
+      {
+        title: "If you're building something \u2192 you have to share it.",
+        description:
+          "A workflow you automated. A tool you're testing. An agent you shipped. Whatever you're working on \u2014 bring it to the room.",
+      },
+      {
+        title: "If you don't understand something \u2192 you have to ask.",
+        description:
+          "No pretending. No nodding along. If you're stuck or confused, that's exactly what this group is for.",
+      },
+    ],
   },
-  guarantee:
-    "Everyone leaves better. Guaranteed.",
+  deepDive: {
+    title: "Deep Dive",
+    description:
+      "Each session includes a deep dive on 1\u20132 key use cases or topics \u2014 led by advanced engineers and operators who can break it down and answer questions in real time.",
+  },
 };
 
 // ---------------------------------------------------------------------------
