@@ -61,7 +61,7 @@ export const hero = {
     },
     {
       quote:
-        "Imagination is the bottleneck now. Being in this room is the fastest way to expand what you think is possible.",
+        "Imagination is the bottleneck now. Seeing what others ship with **Claude Code** and **Cursor** expanded what I thought was possible.",
       name: "Jeff B.",
       role: "Data Ops",
       avatar: "https://i.pravatar.cc/150?img=53",
@@ -109,7 +109,7 @@ export const hero = {
     },
     {
       quote:
-        "Took more notes in one session than I have in months of webinars. This is where the real signal is.",
+        "Took more notes in one session than in months of webinars. The **Cursor** vs **Windsurf** breakdown alone was worth it.",
       name: "Trevor S.",
       role: "Solutions Lead",
       avatar: "https://i.pravatar.cc/150?img=60",
