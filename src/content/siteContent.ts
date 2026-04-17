@@ -52,46 +52,124 @@ export const hero = {
   secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   highlights: [
     {
-      quote: "Built a pricing estimator trained on thousands of real proposals. Generic AI was off by an order of magnitude — ours nails it.",
+      quote:
+        "Built a pricing estimator in **Claude Code** trained on thousands of real proposals. Beats generic AI by an order of magnitude.",
       name: "Brian G.",
       role: "Founder",
       avatar: "https://i.pravatar.cc/150?img=12",
       type: "build" as const,
     },
     {
-      quote: "Imagination is the bottleneck now. Being in this room is the fastest way to expand what you think is possible.",
+      quote:
+        "Imagination is the bottleneck now. Being in this room is the fastest way to expand what you think is possible.",
       name: "Jeff B.",
       role: "Data Ops",
       avatar: "https://i.pravatar.cc/150?img=53",
       type: "praise" as const,
     },
     {
-      quote: "Built a full LinkedIn prospecting pipeline in one hour. Enrichment, scoring, drafting, sending — all automated.",
+      quote:
+        "Full LinkedIn prospecting pipeline in one hour \u2014 **Agent.ai** for data, **n8n** for the flow, **Claude** for the copy.",
       name: "Nejc S.",
       role: "Founder",
       avatar: "https://i.pravatar.cc/150?img=59",
       type: "build" as const,
     },
     {
-      quote: "We went from 3\u20134 days per component to literally one hour. Claude Code changed everything for our dev team.",
+      quote:
+        "Went from 3\u20134 days per component to one hour with **Claude Code**. Changed everything for our dev team.",
       name: "JC T.",
       role: "Agency Partner",
       avatar: "https://i.pravatar.cc/150?img=33",
       type: "praise" as const,
     },
     {
-      quote: "Replaced a paid SaaS tool with a custom app I built in 10 days. It syncs LinkedIn DMs to HubSpot exactly how we need.",
+      quote:
+        "Replaced a $500/mo SaaS with a **Cursor**-built extension that syncs LinkedIn to HubSpot exactly how we want.",
       name: "Klemen H.",
       role: "HubSpot Partner",
       avatar: "https://i.pravatar.cc/150?img=14",
       type: "build" as const,
     },
     {
-      quote: "I took more notes in one session than I have in months of courses and webinars. This is where the real signal is.",
+      quote:
+        "Stopped guessing between **Cursor**, **Windsurf**, and **Zed**. Someone in the room had already tested all three.",
+      name: "Derek A.",
+      role: "RevOps Lead",
+      avatar: "https://i.pravatar.cc/150?img=8",
+      type: "praise" as const,
+    },
+    {
+      quote:
+        "Proposal generator shipped in two days \u2014 **v0** for the UI, **Claude** on the backend, **Supabase** for storage.",
+      name: "Maya K.",
+      role: "Consultant",
+      avatar: "https://i.pravatar.cc/150?img=26",
+      type: "build" as const,
+    },
+    {
+      quote:
+        "Took more notes in one session than I have in months of webinars. This is where the real signal is.",
       name: "Trevor S.",
       role: "Solutions Lead",
       avatar: "https://i.pravatar.cc/150?img=60",
       type: "praise" as const,
+    },
+    {
+      quote:
+        "**Replit** Agent builds 80% of my prototypes. I just finish the last 20% in **Cursor**.",
+      name: "Priya S.",
+      role: "Product Manager",
+      avatar: "https://i.pravatar.cc/150?img=47",
+      type: "build" as const,
+    },
+    {
+      quote:
+        "Found out about **Maestro** here. Already shipped three workflows with it this week.",
+      name: "Aaron T.",
+      role: "Automation Lead",
+      avatar: "https://i.pravatar.cc/150?img=11",
+      type: "praise" as const,
+    },
+    {
+      quote:
+        "Wired **HubSpot**, **Notion**, and **Slack** into one AI layer via **Windsurf**. Weekend project.",
+      name: "Ryan M.",
+      role: "Ops Director",
+      avatar: "https://i.pravatar.cc/150?img=17",
+      type: "build" as const,
+    },
+    {
+      quote:
+        "Learned more about **Claude Code** in one hour than a month of YouTube tutorials.",
+      name: "Sam W.",
+      role: "Founder",
+      avatar: "https://i.pravatar.cc/150?img=22",
+      type: "praise" as const,
+    },
+    {
+      quote:
+        "**Bolt.new** for the scaffold, **Claude Code** for the rest. My new default stack.",
+      name: "Olivia P.",
+      role: "Designer",
+      avatar: "https://i.pravatar.cc/150?img=48",
+      type: "build" as const,
+    },
+    {
+      quote:
+        "The group caught a context bug in my **Codex** setup that would have cost me a full week.",
+      name: "Daniel R.",
+      role: "Engineer",
+      avatar: "https://i.pravatar.cc/150?img=38",
+      type: "praise" as const,
+    },
+    {
+      quote:
+        "Automated weekly reporting with **n8n** + **Gumloop** + **GPT-5**. Four hours saved every week.",
+      name: "Emma L.",
+      role: "Marketing Ops",
+      avatar: "https://i.pravatar.cc/150?img=51",
+      type: "build" as const,
     },
   ],
 };
@@ -359,23 +437,6 @@ export const requestInvitePage = {
   submitLabel: "Submit Request",
   successMessage:
     "Thanks for your interest. We'll follow up if it's a fit.",
-};
-
-export const toolsFeatured = {
-  eyebrow: "Tools on the room\u2019s mind",
-  title: "What operators are actually using.",
-  subtitle:
-    "These come up every week \u2014 in demos, in questions, in what\u2019s working and what isn\u2019t.",
-  tools: [
-    { name: "Claude Code", glyph: "\u25C6" },
-    { name: "Codex", glyph: ">_" },
-    { name: "Cursor", glyph: "\u25B2" },
-    { name: "Windsurf", glyph: "\u2728" },
-    { name: "Replit", glyph: "\u25E4" },
-    { name: "Agent.ai", glyph: "\u25CE" },
-    { name: "CoWork", glyph: "\u25A2" },
-    { name: "Maestro", glyph: "\u266B" },
-  ],
 };
 
 export const studyGroupsSections = {
