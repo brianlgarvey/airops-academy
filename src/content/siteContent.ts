@@ -35,7 +35,7 @@ export const brand = {
 
 export const navigation = {
   links: [
-    { label: "Study Groups", href: "/" },
+    { label: "AI Study Groups", href: "/" },
     { label: "Workshops", href: "/workshops" },
   ],
   cta: { label: "Request an Invite", href: "/" },
@@ -230,7 +230,7 @@ export const footer = {
   copyright: `\u00A9 ${new Date().getFullYear()} AIRops Academy. All rights reserved.`,
   tagline: "AI better \u2014 together.",
   links: [
-    { label: "Study Groups", href: "/" },
+    { label: "AI Study Groups", href: "/" },
     { label: "Workshops", href: "/workshops" },
     { label: "About", href: "/about" },
   ],
@@ -362,7 +362,7 @@ export const requestInvitePage = {
 };
 
 export const studyGroupsHome = {
-  headline: "Join a study group.",
+  headline: "Join an AI study group.",
   subheadline:
     "A weekly session with a builder group of 6\u20138 operators. One hour. Two rules. Everyone leaves better, guaranteed.",
   formHeadline: "Request an invite",

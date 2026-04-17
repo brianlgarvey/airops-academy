@@ -1,12 +1,28 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
-import { studyGroupsHome } from "@/content/siteContent";
+import { studyGroupsHome, hero } from "@/content/siteContent";
 
 export default function HomePage() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState<Record<string, string>>({});
+
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setActiveIndex((i) => (i + 1) % hero.highlights.length);
+        setVisible(true);
+      }, 500);
+    }, 8000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const highlight = hero.highlights[activeIndex];
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -23,7 +39,7 @@ export default function HomePage() {
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left — headline + social proof */}
+          {/* Left — headline + rotating spotlight */}
           <div>
             <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-semibold tracking-tight leading-[1.1] text-stone-900">
               {studyGroupsHome.headline}
@@ -33,28 +49,72 @@ export default function HomePage() {
               {studyGroupsHome.subheadline}
             </p>
 
-            {/* Faces row */}
+            {/* Rotating spotlight */}
             <div className="mt-10">
               <p className="text-[12px] font-semibold uppercase tracking-wider text-stone-400 mb-4">
                 {studyGroupsHome.socialProofLabel}
               </p>
-              <div className="flex items-center">
-                <div className="flex -space-x-3">
-                  {studyGroupsHome.faces.map((face) => (
-                    <Image
-                      key={face.name}
-                      src={face.avatar}
-                      alt={face.name}
-                      width={48}
-                      height={48}
-                      className="rounded-full object-cover ring-2 ring-white"
-                      unoptimized
-                    />
-                  ))}
+
+              <div
+                className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
+              >
+                {/* Quote card */}
+                <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+                  <span
+                    className={`inline-block text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full mb-3 ${
+                      highlight.type === "build"
+                        ? "bg-stone-900 text-white"
+                        : "bg-stone-100 text-stone-500 border border-stone-200"
+                    }`}
+                  >
+                    {highlight.type === "build" ? "What they built" : "Feedback"}
+                  </span>
+                  <p className="text-[14px] text-stone-600 leading-relaxed">
+                    &ldquo;{highlight.quote}&rdquo;
+                  </p>
                 </div>
-                <span className="ml-4 text-[13px] text-stone-500">
-                  Operators, founders, and builders
-                </span>
+
+                {/* Face + name */}
+                <div className="mt-4 flex items-center gap-3">
+                  <Image
+                    src={highlight.avatar}
+                    alt={highlight.name}
+                    width={56}
+                    height={56}
+                    className="rounded-full object-cover shadow-md ring-2 ring-white"
+                    unoptimized
+                  />
+                  <div>
+                    <p className="text-[14px] font-semibold text-stone-900">
+                      {highlight.name}
+                    </p>
+                    <p className="text-[12px] text-stone-400">
+                      {highlight.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Dots */}
+              <div className="mt-5 flex gap-1.5">
+                {hero.highlights.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setVisible(false);
+                      setTimeout(() => {
+                        setActiveIndex(i);
+                        setVisible(true);
+                      }, 300);
+                    }}
+                    className={`h-1.5 rounded-full transition-all ${
+                      i === activeIndex
+                        ? "w-5 bg-stone-900"
+                        : "w-1.5 bg-stone-300 hover:bg-stone-400"
+                    }`}
+                    aria-label={`Show highlight ${i + 1}`}
+                  />
+                ))}
               </div>
             </div>
           </div>
