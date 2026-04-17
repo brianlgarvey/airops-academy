@@ -484,8 +484,9 @@ export const studyGroupsSections = {
   },
   rules: {
     eyebrow: "Two rules",
-    title: "That\u2019s the whole system.",
-    subtitle: "Just two rules. That\u2019s it.",
+    title: "Just two rules.",
+    subtitle: "That\u2019s it.",
+    closing: "That\u2019s the whole system.",
     items: [
       {
         title: "If you\u2019re building something \u2192 you have to share it.",

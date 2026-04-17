@@ -93,6 +93,12 @@ export function StudyGroupsWhy() {
               </div>
             ))}
           </div>
+
+          {rules.closing && (
+            <p className="mt-10 text-xl md:text-2xl font-semibold tracking-tight text-stone-900">
+              {rules.closing}
+            </p>
+          )}
         </div>
       </section>
     </>
