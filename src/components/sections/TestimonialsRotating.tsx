@@ -47,41 +47,41 @@ function TestimonialCard({ startIndex, intervalMs }: Card) {
   const highlight = hero.highlights[index];
 
   return (
-    <div className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm h-full min-h-[220px] flex flex-col">
+    <div className="rounded-xl border border-stone-200 bg-white p-4 shadow-sm">
       <div
-        className={`flex flex-col h-full transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
+        className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
       >
-        {/* Badge */}
-        <span
-          className={`inline-block self-start text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full mb-3 ${
-            highlight.type === "build"
-              ? "bg-stone-900 text-white"
-              : "bg-stone-100 text-stone-500 border border-stone-200"
-          }`}
-        >
-          {highlight.type === "build" ? "What they built" : "Feedback"}
-        </span>
-
-        {/* Quote */}
-        <p className="text-[13px] text-stone-600 leading-relaxed flex-1">
-          &ldquo;{renderRichQuote(highlight.quote)}&rdquo;
-        </p>
-
-        {/* Face + name */}
-        <div className="mt-4 pt-4 border-t border-stone-100 flex items-center gap-2.5">
+        <div className="flex items-start gap-3">
           <Image
             src={highlight.avatar}
             alt={highlight.name}
-            width={34}
-            height={34}
-            className="rounded-full object-cover ring-2 ring-white"
+            width={36}
+            height={36}
+            className="rounded-full object-cover ring-2 ring-white flex-shrink-0 mt-0.5"
             unoptimized
           />
-          <div>
-            <p className="text-[12px] font-semibold text-stone-900">
-              {highlight.name}
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center gap-2 mb-1.5">
+              <p className="text-[12px] font-semibold text-stone-900 leading-none">
+                {highlight.name}
+              </p>
+              <span className="text-stone-300 leading-none">·</span>
+              <p className="text-[11px] text-stone-400 leading-none">
+                {highlight.role}
+              </p>
+              <span
+                className={`ml-auto text-[9px] font-semibold uppercase tracking-wider px-1.5 py-0.5 rounded ${
+                  highlight.type === "build"
+                    ? "bg-stone-900 text-white"
+                    : "bg-stone-100 text-stone-500"
+                }`}
+              >
+                {highlight.type === "build" ? "Built" : "Feedback"}
+              </span>
+            </div>
+            <p className="text-[13px] text-stone-600 leading-relaxed">
+              &ldquo;{renderRichQuote(highlight.quote)}&rdquo;
             </p>
-            <p className="text-[11px] text-stone-400">{highlight.role}</p>
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@ function TestimonialCard({ startIndex, intervalMs }: Card) {
 
 export function TestimonialsRotating() {
   return (
-    <div className="grid sm:grid-cols-3 gap-4">
+    <div className="space-y-3">
       {cards.map((card, i) => (
         <TestimonialCard
           key={i}

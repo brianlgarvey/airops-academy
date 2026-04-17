@@ -22,19 +22,23 @@ export default function HomePage() {
 
   return (
     <>
-      <section id="top" className="relative pt-28 pb-12 md:pt-32 md:pb-16">
+      <section id="top" className="relative pt-24 pb-10 md:pt-28 md:pb-14">
         <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
-          {/* Top: headline + seamless form */}
-          <div className="grid lg:grid-cols-5 gap-10 lg:gap-14 items-start">
-            {/* Left — headline */}
+          <div className="grid lg:grid-cols-5 gap-10 lg:gap-12 items-start">
+            {/* Left — headline + cards */}
             <div className="lg:col-span-3">
-              <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-semibold tracking-tight leading-[1.1] text-stone-900">
+              <h1 className="text-4xl sm:text-5xl md:text-[3rem] font-semibold tracking-tight leading-[1.1] text-stone-900">
                 {studyGroupsHome.headline}
               </h1>
 
-              <p className="mt-6 text-lg text-stone-500 leading-relaxed max-w-xl">
+              <p className="mt-5 text-lg text-stone-500 leading-relaxed max-w-xl">
                 {studyGroupsHome.subheadline}
               </p>
+
+              {/* Cards stacked, compact */}
+              <div className="mt-8">
+                <TestimonialsRotating />
+              </div>
             </div>
 
             {/* Right — seamless form */}
@@ -65,14 +69,14 @@ export default function HomePage() {
                 </div>
               ) : (
                 <>
-                  <h2 className="text-[15px] font-semibold tracking-tight text-stone-900 uppercase tracking-wider">
+                  <h2 className="text-[12px] font-semibold text-stone-900 uppercase tracking-wider">
                     {studyGroupsHome.formHeadline}
                   </h2>
-                  <p className="mt-1 text-[13px] text-stone-500 leading-relaxed">
+                  <p className="mt-1.5 text-[13px] text-stone-500 leading-relaxed">
                     {studyGroupsHome.formSubheadline}
                   </p>
 
-                  <form onSubmit={handleSubmit} className="mt-5 space-y-3.5">
+                  <form onSubmit={handleSubmit} className="mt-5 space-y-3">
                     {studyGroupsHome.fields.map((field) => (
                       <div key={field.name}>
                         <label
@@ -118,14 +122,6 @@ export default function HomePage() {
                 </>
               )}
             </div>
-          </div>
-
-          {/* Rotating testimonial cards — above the fold */}
-          <div className="mt-14">
-            <p className="text-[12px] font-semibold uppercase tracking-wider text-stone-400 mb-4">
-              In the room right now
-            </p>
-            <TestimonialsRotating />
           </div>
         </div>
       </section>
