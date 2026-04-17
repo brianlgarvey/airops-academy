@@ -166,9 +166,6 @@ export default function HomePage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left — proposition */}
             <div>
-              <p className="text-[12px] font-semibold uppercase tracking-wider text-stone-400 mb-4">
-                {studyGroupsHome.eyebrow}
-              </p>
               <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-semibold tracking-tight leading-[1.1] text-stone-900">
                 {studyGroupsHome.headline}
               </h1>
