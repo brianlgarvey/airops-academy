@@ -35,11 +35,10 @@ export const brand = {
 
 export const navigation = {
   links: [
-    { label: "How It Works", href: "#how-it-works" },
-    { label: "Community", href: "#" },
-    { label: "Workshops", href: "#" },
+    { label: "Study Groups", href: "/" },
+    { label: "Workshops", href: "/workshops" },
   ],
-  cta: { label: "Request an Invite", href: "/request-invite" },
+  cta: { label: "Request an Invite", href: "/" },
 };
 
 // ---------------------------------------------------------------------------
@@ -49,7 +48,7 @@ export const hero = {
   headline: "AI better — together.",
   subheadline:
     "An invite-only network of operators sharing what's working, what's not, and what's next — week over week.",
-  primaryCta: { label: "Request an Invite", href: "/request-invite" },
+  primaryCta: { label: "Request an Invite", href: "/" },
   secondaryCta: { label: "See How It Works", href: "/how-it-works" },
   highlights: [
     {
@@ -220,7 +219,7 @@ export const finalCta = {
   headline: "Want in?",
   subheadline:
     "Sessions are free, invite-only, and designed for operators who learn by doing — not by watching.",
-  cta: { label: "Request an Invite", href: "/request-invite" },
+  cta: { label: "Request an Invite", href: "/" },
   supportingLine: "We'll follow up if it's a fit.",
 };
 
@@ -231,10 +230,9 @@ export const footer = {
   copyright: `\u00A9 ${new Date().getFullYear()} AIRops Academy. All rights reserved.`,
   tagline: "AI better \u2014 together.",
   links: [
-    { label: "How It Works", href: "/how-it-works" },
-    { label: "Sessions", href: "/sessions" },
+    { label: "Study Groups", href: "/" },
+    { label: "Workshops", href: "/workshops" },
     { label: "About", href: "/about" },
-    { label: "Request an Invite", href: "/request-invite" },
   ],
 };
 
@@ -361,6 +359,39 @@ export const requestInvitePage = {
   submitLabel: "Submit Request",
   successMessage:
     "Thanks for your interest. We'll follow up if it's a fit.",
+};
+
+export const studyGroupsHome = {
+  headline: "Join a study group.",
+  subheadline:
+    "A weekly session with a builder group of 6\u20138 operators. One hour. Two rules. Everyone leaves better, guaranteed.",
+  formHeadline: "Request an invite",
+  formSubheadline:
+    "Tell us a bit about yourself. We'll follow up if it's a fit.",
+  fields: [
+    { name: "name", label: "Name", type: "text" as const, required: true },
+    { name: "email", label: "Email", type: "email" as const, required: true },
+    { name: "company", label: "Company", type: "text" as const, required: true },
+    { name: "role", label: "Role / Title", type: "text" as const, required: true },
+    {
+      name: "currentUsage",
+      label: "How are you using AI today?",
+      type: "textarea" as const,
+      required: true,
+    },
+  ],
+  submitLabel: "Request an Invite",
+  successMessage:
+    "Got it. We'll be in touch if it's a fit.",
+  socialProofLabel: "Recent operators in the room",
+  faces: [
+    { name: "Brian G.", avatar: "https://i.pravatar.cc/150?img=12" },
+    { name: "Jeff B.", avatar: "https://i.pravatar.cc/150?img=53" },
+    { name: "Nejc S.", avatar: "https://i.pravatar.cc/150?img=59" },
+    { name: "JC T.", avatar: "https://i.pravatar.cc/150?img=33" },
+    { name: "Klemen H.", avatar: "https://i.pravatar.cc/150?img=14" },
+    { name: "Trevor S.", avatar: "https://i.pravatar.cc/150?img=60" },
+  ],
 };
 
 export const aboutPage = {
