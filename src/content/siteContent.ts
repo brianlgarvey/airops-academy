@@ -38,7 +38,7 @@ export const navigation = {
     { label: "AI Study Groups", href: "/" },
     { label: "Workshops", href: "https://www.airopsacademy.com/" },
   ],
-  cta: { label: "Request an Invite", href: "/" },
+  cta: { label: "Request an Invite", href: "/#invite-form" },
 };
 
 // ---------------------------------------------------------------------------

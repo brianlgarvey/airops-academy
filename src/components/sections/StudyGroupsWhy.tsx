@@ -1,8 +1,7 @@
-import Link from "next/link";
 import { studyGroupsSections } from "@/content/siteContent";
 
 export function StudyGroupsWhy() {
-  const { pace, value, rules, closingCta } = studyGroupsSections;
+  const { pace, value, rules } = studyGroupsSections;
 
   return (
     <>
@@ -93,41 +92,6 @@ export function StudyGroupsWhy() {
                 </p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Closing CTA */}
-      <section className="py-20 md:py-24">
-        <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
-          <div className="max-w-xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900">
-              {closingCta.title}
-            </h2>
-            <p className="mt-4 text-lg text-stone-500 leading-relaxed">
-              {closingCta.subtitle}
-            </p>
-            <div className="mt-8">
-              <Link
-                href={closingCta.buttonHref}
-                className="inline-flex items-center justify-center rounded-lg bg-stone-900 px-8 py-3.5 text-[15px] font-medium text-white hover:bg-stone-700 transition-all"
-              >
-                {closingCta.buttonLabel}
-                <svg
-                  className="ml-2 h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M5 10l7-7m0 0l7 7m-7-7v18"
-                  />
-                </svg>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
