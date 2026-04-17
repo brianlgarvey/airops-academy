@@ -23,15 +23,20 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-7">
-            {navigation.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-[13px] text-stone-500 hover:text-stone-900 transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navigation.links.map((link) => {
+              const isExternal = link.href.startsWith("http");
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  className="text-[13px] text-stone-500 hover:text-stone-900 transition-colors"
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link
               href={navigation.cta.href}
               className="rounded-lg bg-stone-900 px-4 py-2 text-[13px] font-medium text-white hover:bg-stone-700 transition-colors"
@@ -73,16 +78,21 @@ export function Navbar() {
         {/* Mobile menu */}
         {mobileOpen && (
           <div className="md:hidden border-t border-stone-200/60 py-4 space-y-1">
-            {navigation.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="block text-sm text-stone-500 hover:text-stone-900 transition-colors py-2 px-1"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navigation.links.map((link) => {
+              const isExternal = link.href.startsWith("http");
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  onClick={() => setMobileOpen(false)}
+                  className="block text-sm text-stone-500 hover:text-stone-900 transition-colors py-2 px-1"
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
             <Link
               href={navigation.cta.href}
               onClick={() => setMobileOpen(false)}

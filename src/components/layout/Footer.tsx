@@ -21,15 +21,20 @@ export function Footer() {
 
           {/* Links */}
           <div className="flex flex-wrap items-center justify-center gap-6">
-            {footer.links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-[13px] text-stone-400 hover:text-stone-700 transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {footer.links.map((link) => {
+              const isExternal = link.href.startsWith("http");
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  className="text-[13px] text-stone-400 hover:text-stone-700 transition-colors"
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
 

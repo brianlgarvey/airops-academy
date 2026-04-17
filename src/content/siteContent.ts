@@ -36,7 +36,7 @@ export const brand = {
 export const navigation = {
   links: [
     { label: "AI Study Groups", href: "/" },
-    { label: "Workshops", href: "/workshops" },
+    { label: "Workshops", href: "https://www.airopsacademy.com/" },
   ],
   cta: { label: "Request an Invite", href: "/" },
 };
@@ -231,7 +231,7 @@ export const footer = {
   tagline: "AI better \u2014 together.",
   links: [
     { label: "AI Study Groups", href: "/" },
-    { label: "Workshops", href: "/workshops" },
+    { label: "Workshops", href: "https://www.airopsacademy.com/" },
     { label: "About", href: "/about" },
   ],
 };
