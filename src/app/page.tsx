@@ -158,6 +158,9 @@ export default function HomePage() {
                     />
                   </svg>
                 </Link>
+                <p className="mt-4 text-[13px] text-stone-400">
+                  Completely free. Invite-only.
+                </p>
               </div>
             </div>
 
