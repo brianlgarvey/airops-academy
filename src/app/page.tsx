@@ -39,44 +39,80 @@ function FeaturedQuote() {
 
   return (
     <div className="relative">
-      {/* Decorative opening quote mark */}
-      <span
-        aria-hidden
-        className="absolute -top-6 -left-3 md:-top-8 md:-left-5 text-7xl md:text-8xl font-serif text-stone-200 leading-none select-none pointer-events-none"
-      >
-        &ldquo;
-      </span>
-
       <div
         className={`relative transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
       >
+        {/* Explicit context label — what the quote is about */}
+        <div className="mb-4 flex items-center gap-2">
+          <span
+            className={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${
+              highlight.type === "build"
+                ? "bg-stone-900 text-white"
+                : "bg-amber-50 text-amber-800 border border-amber-200"
+            }`}
+          >
+            {highlight.type === "build" ? (
+              <>
+                <svg
+                  className="h-3 w-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
+                  />
+                </svg>
+                A participant built this
+              </>
+            ) : (
+              <>
+                <svg
+                  className="h-3 w-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                  />
+                </svg>
+                A participant said this
+              </>
+            )}
+          </span>
+        </div>
+
         <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
-          {renderRichQuote(highlight.quote)}
+          &ldquo;{renderRichQuote(highlight.quote)}&rdquo;
         </p>
 
-        <div className="mt-7 flex items-center gap-3">
+        <div className="mt-6 flex items-center gap-3">
           <Image
             src={highlight.avatar}
             alt={highlight.name}
-            width={48}
-            height={48}
+            width={44}
+            height={44}
             className="rounded-full object-cover ring-2 ring-white shadow-sm"
             unoptimized
           />
           <div className="flex-1 min-w-0">
             <p className="text-[14px] font-semibold text-stone-900">
               {highlight.name}
-              <span className="font-normal text-stone-400">
-                {" "}
-                &middot; {highlight.role}
-              </span>
             </p>
-            <p
-              className={`mt-0.5 text-[11px] font-semibold uppercase tracking-wider ${
-                highlight.type === "build" ? "text-stone-900" : "text-stone-400"
-              }`}
-            >
-              {highlight.type === "build" ? "What they built" : "Feedback"}
+            <p className="text-[13px] text-stone-400">
+              {highlight.role}
             </p>
           </div>
         </div>
