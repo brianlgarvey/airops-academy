@@ -442,8 +442,8 @@ export const requestInvitePage = {
 export const studyGroupsSections = {
   pace: {
     eyebrow: "The problem",
-    title: "AI is moving too fast to keep up alone.",
-    body: "New models. New tools. New techniques. Every week. Keeping up solo means endless tabs, half-finished experiments, and the nagging feeling you're falling behind.",
+    title: "Keeping up alone is a losing game.",
+    body: "New models. New tools. New techniques. Every week. Trying to keep up solo means endless tabs, half-finished experiments, and the nagging feeling you\u2019re falling behind.",
   },
   value: {
     eyebrow: "What you get",
@@ -509,9 +509,24 @@ export const studyGroupsSections = {
 };
 
 export const studyGroupsHome = {
-  headline: "Join an AI study group.",
+  eyebrow: "The AIRops Academy Study Group",
+  headline: "AI is moving too fast to keep up alone.",
   subheadline:
-    "A weekly session with a builder group of 6\u20138 operators. One hour. Two rules. Everyone leaves better, guaranteed.",
+    "Join a weekly AI study group of 6\u20138 operators. One hour. Two rules. Everyone leaves better, guaranteed.",
+  ctaLabel: "Join an AI Study Group",
+  sponsors: {
+    label: "Sponsored by",
+    items: [
+      {
+        name: "Profoundly",
+        href: "https://www.profoundly.com/",
+      },
+      {
+        name: "Sellestial",
+        href: "https://www.sellestial.com/",
+      },
+    ],
+  },
   formHeadline: "Request an invite",
   formSubheadline:
     "Tell us a bit about yourself. We'll follow up if it's a fit.",
