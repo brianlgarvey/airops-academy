@@ -361,6 +361,23 @@ export const requestInvitePage = {
     "Thanks for your interest. We'll follow up if it's a fit.",
 };
 
+export const toolsFeatured = {
+  eyebrow: "Tools on the room\u2019s mind",
+  title: "What operators are actually using.",
+  subtitle:
+    "These come up every week \u2014 in demos, in questions, in what\u2019s working and what isn\u2019t.",
+  tools: [
+    { name: "Claude Code", glyph: "\u25C6" },
+    { name: "Codex", glyph: ">_" },
+    { name: "Cursor", glyph: "\u25B2" },
+    { name: "Windsurf", glyph: "\u2728" },
+    { name: "Replit", glyph: "\u25E4" },
+    { name: "Agent.ai", glyph: "\u25CE" },
+    { name: "CoWork", glyph: "\u25A2" },
+    { name: "Maestro", glyph: "\u266B" },
+  ],
+};
+
 export const studyGroupsSections = {
   pace: {
     eyebrow: "The problem",
