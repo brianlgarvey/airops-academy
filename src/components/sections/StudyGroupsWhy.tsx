@@ -65,9 +65,11 @@ export function StudyGroupsWhy() {
             <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-stone-900 leading-tight">
               {rules.title}
             </h2>
-            <p className="mt-4 text-lg text-stone-500 leading-relaxed">
-              {rules.subtitle}
-            </p>
+            {rules.subtitle && (
+              <p className="mt-4 text-lg text-stone-500 leading-relaxed">
+                {rules.subtitle}
+              </p>
+            )}
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
