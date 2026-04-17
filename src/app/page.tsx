@@ -161,29 +161,8 @@ export default function HomePage() {
   return (
     <>
       {/* Hero — proposition left, featured quote right */}
-      <section className="relative pt-24 pb-16 md:pt-28 md:pb-24">
+      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
         <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
-          {/* Sponsor line — above the fold */}
-          <div className="mb-10 flex items-center gap-2 text-[12px]">
-            <span className="text-stone-400 uppercase tracking-wider font-semibold text-[11px]">
-              {studyGroupsHome.sponsors.label}
-            </span>
-            {studyGroupsHome.sponsors.items.map((sponsor) => (
-              <a
-                key={sponsor.name}
-                href={sponsor.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-stone-200 bg-white text-stone-700 hover:border-stone-300 hover:text-stone-900 transition-colors"
-              >
-                <span className="inline-block h-1.5 w-1.5 rounded-full bg-stone-900" />
-                <span className="font-semibold tracking-tight">
-                  {sponsor.name}
-                </span>
-              </a>
-            ))}
-          </div>
-
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left — proposition */}
             <div>
@@ -227,6 +206,27 @@ export default function HomePage() {
             {/* Right — featured quote (seamless, no box) */}
             <div className="lg:pl-6">
               <FeaturedQuote />
+
+              {/* Sponsors — below quote */}
+              <div className="mt-10 pt-6 border-t border-stone-200/70 flex flex-wrap items-center gap-2 text-[12px]">
+                <span className="text-stone-400 uppercase tracking-wider font-semibold text-[11px] mr-1">
+                  {studyGroupsHome.sponsors.label}
+                </span>
+                {studyGroupsHome.sponsors.items.map((sponsor) => (
+                  <a
+                    key={sponsor.name}
+                    href={sponsor.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-stone-200 bg-white text-stone-700 hover:border-stone-300 hover:text-stone-900 transition-colors"
+                  >
+                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-stone-900" />
+                    <span className="font-semibold tracking-tight">
+                      {sponsor.name}
+                    </span>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
