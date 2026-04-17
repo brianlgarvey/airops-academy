@@ -203,27 +203,38 @@ export default function HomePage() {
             {/* Right — featured quote (seamless, no box) */}
             <div className="lg:pl-6">
               <FeaturedQuote />
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Sponsors — below quote */}
-              <div className="mt-10 pt-6 border-t border-stone-200/70 flex flex-wrap items-center gap-2 text-[12px]">
-                <span className="text-stone-400 uppercase tracking-wider font-semibold text-[11px] mr-1">
-                  {studyGroupsHome.sponsors.label}
-                </span>
-                {studyGroupsHome.sponsors.items.map((sponsor) => (
-                  <a
-                    key={sponsor.name}
-                    href={sponsor.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-stone-200 bg-white text-stone-700 hover:border-stone-300 hover:text-stone-900 transition-colors"
-                  >
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-stone-900" />
-                    <span className="font-semibold tracking-tight">
-                      {sponsor.name}
-                    </span>
-                  </a>
-                ))}
-              </div>
+      {/* Sponsors strip */}
+      <section
+        aria-label="Sponsors"
+        className="py-8 md:py-10 border-y border-stone-200/70 bg-white"
+      >
+        <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+            <p className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 shrink-0">
+              {studyGroupsHome.sponsors.label}
+            </p>
+            <div className="grid sm:grid-cols-2 gap-x-10 gap-y-3 flex-1 md:max-w-3xl md:ml-8">
+              {studyGroupsHome.sponsors.items.map((sponsor) => (
+                <a
+                  key={sponsor.name}
+                  href={sponsor.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-baseline gap-2.5 text-[13px]"
+                >
+                  <span className="font-semibold text-stone-900 group-hover:text-stone-700 transition-colors whitespace-nowrap">
+                    {sponsor.name}
+                  </span>
+                  <span className="text-stone-400 group-hover:text-stone-500 transition-colors leading-snug">
+                    {sponsor.description}
+                  </span>
+                </a>
+              ))}
             </div>
           </div>
         </div>

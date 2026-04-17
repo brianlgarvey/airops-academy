@@ -519,10 +519,12 @@ export const studyGroupsHome = {
     items: [
       {
         name: "Profoundly",
+        description: "Hire vetted HubSpot help for projects.",
         href: "https://www.profoundly.com/",
       },
       {
         name: "Sellestial",
+        description: "Reimagine your organization with AI.",
         href: "https://www.sellestial.com/",
       },
     ],
