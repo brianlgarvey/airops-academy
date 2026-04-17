@@ -361,6 +361,74 @@ export const requestInvitePage = {
     "Thanks for your interest. We'll follow up if it's a fit.",
 };
 
+export const studyGroupsSections = {
+  pace: {
+    eyebrow: "The problem",
+    title: "AI is moving too fast to keep up alone.",
+    body: "New models. New tools. New techniques. Every week. Keeping up solo means endless tabs, half-finished experiments, and the nagging feeling you're falling behind.",
+  },
+  value: {
+    eyebrow: "What you get",
+    title: "Learn and grow with other operators.",
+    subtitle: "A weekly one-hour session where operators share what they\u2019re actually doing with AI.",
+    items: [
+      {
+        title: "Hear what\u2019s working",
+        description:
+          "Real workflows, real results, real lessons from people doing the work.",
+      },
+      {
+        title: "Hear what\u2019s not",
+        description:
+          "What\u2019s overhyped. What doesn\u2019t deliver. Save yourself the time.",
+      },
+      {
+        title: "Hear what\u2019s next",
+        description:
+          "New tools, new techniques \u2014 surfaced by operators who are paying attention.",
+      },
+      {
+        title: "Ask questions",
+        description:
+          "Stuck on something? The group is your brain trust.",
+      },
+      {
+        title: "Get answers",
+        description:
+          "Direct, practical input from people who\u2019ve been there.",
+      },
+      {
+        title: "Help others",
+        description:
+          "Teaching is the fastest way to sharpen your own thinking.",
+      },
+    ],
+  },
+  rules: {
+    eyebrow: "Two rules",
+    title: "That\u2019s the whole system.",
+    subtitle: "Just two rules. That\u2019s it.",
+    items: [
+      {
+        title: "If you\u2019re building something \u2192 you have to share it.",
+        description:
+          "A workflow. A tool. An agent. Whatever you\u2019re working on \u2014 bring it to the room.",
+      },
+      {
+        title: "If you don\u2019t understand something \u2192 you have to ask.",
+        description:
+          "No pretending. No nodding along. That\u2019s exactly what this group is for.",
+      },
+    ],
+  },
+  closingCta: {
+    title: "Ready to join?",
+    subtitle: "Request an invite and we\u2019ll follow up if it\u2019s a fit.",
+    buttonLabel: "Request an Invite",
+    buttonHref: "#top",
+  },
+};
+
 export const studyGroupsHome = {
   headline: "Join an AI study group.",
   subheadline:

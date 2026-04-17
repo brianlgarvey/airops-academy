@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { studyGroupsHome, hero } from "@/content/siteContent";
+import { StudyGroupsWhy } from "@/components/sections/StudyGroupsWhy";
 
 export default function HomePage() {
   const [submitted, setSubmitted] = useState(false);
@@ -36,7 +37,8 @@ export default function HomePage() {
   }
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
+    <>
+      <section id="top" className="relative pt-32 pb-20 md:pt-40 md:pb-28">
       <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left — headline + rotating spotlight */}
@@ -205,5 +207,7 @@ export default function HomePage() {
         </div>
       </div>
     </section>
+    <StudyGroupsWhy />
+    </>
   );
 }
