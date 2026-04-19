@@ -44,21 +44,21 @@ function FeaturedQuote() {
         {/* Tail — border triangle */}
         <div
           aria-hidden
-          className="absolute left-10 -bottom-[14px] w-0 h-0"
+          className="absolute left-10 -bottom-[22px] w-0 h-0"
           style={{
-            borderLeft: "14px solid transparent",
-            borderRight: "14px solid transparent",
-            borderTop: "14px solid rgb(231, 229, 228)",
+            borderLeft: "22px solid transparent",
+            borderRight: "22px solid transparent",
+            borderTop: "22px solid rgb(231, 229, 228)",
           }}
         />
         {/* Tail — fill triangle covering the border triangle */}
         <div
           aria-hidden
-          className="absolute left-[41px] -bottom-[11px] w-0 h-0"
+          className="absolute left-[41px] -bottom-[19px] w-0 h-0"
           style={{
-            borderLeft: "13px solid transparent",
-            borderRight: "13px solid transparent",
-            borderTop: "13px solid #ffffff",
+            borderLeft: "21px solid transparent",
+            borderRight: "21px solid transparent",
+            borderTop: "21px solid #ffffff",
           }}
         />
         <div
