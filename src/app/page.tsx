@@ -79,7 +79,7 @@ function FeaturedQuote() {
     <div className="relative">
       {/* Callout card — swaps treatment for quote vs sponsor */}
       <div
-        className={`relative rounded-2xl p-7 md:p-8 transition-colors duration-500 ${
+        className={`relative rounded-2xl p-7 md:p-8 min-h-[340px] md:min-h-[360px] transition-colors duration-500 ${
           slide.kind === "sponsor"
             ? "bg-stone-900 border border-stone-900 shadow-[0_1px_2px_rgba(0,0,0,0.08),0_12px_32px_-12px_rgba(12,10,9,0.35)]"
             : "bg-white border border-stone-200 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-12px_rgba(0,0,0,0.08)]"
@@ -112,13 +112,45 @@ function FeaturedQuote() {
         <div
           className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
         >
-          {slide.kind === "quote" ? (
-            <>
-              <p className="text-lg md:text-xl text-stone-800 leading-relaxed min-h-[168px] md:min-h-[140px]">
+          {/* Eyebrow — fixed height, reserved on every slide */}
+          <div className="h-5 mb-4 flex items-center">
+            <span className="text-[11px] font-semibold uppercase tracking-wider text-stone-400">
+              {slide.kind === "sponsor"
+                ? "Sponsored by"
+                : slide.data.type === "build"
+                  ? "What participants are building"
+                  : "What participants are saying"}
+            </span>
+          </div>
+
+          {/* Body — matched min-height */}
+          <div className="min-h-[168px] md:min-h-[140px] flex flex-col justify-center">
+            {slide.kind === "quote" ? (
+              <p className="text-lg md:text-xl text-stone-800 leading-relaxed">
                 &ldquo;{renderRichQuote(slide.data.quote)}&rdquo;
               </p>
+            ) : (
+              <>
+                <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white leading-tight">
+                  {slide.data.name}
+                </p>
+                <p className="mt-3 text-[15px] md:text-base text-stone-300 leading-relaxed">
+                  {slide.data.description}
+                </p>
+              </>
+            )}
+          </div>
 
-              <div className="mt-6 pt-5 border-t border-stone-100 flex items-center gap-3">
+          {/* Footer — matched height */}
+          <div
+            className={`mt-6 pt-5 border-t min-h-[57px] flex items-center ${
+              slide.kind === "sponsor"
+                ? "border-stone-700/60"
+                : "border-stone-100"
+            }`}
+          >
+            {slide.kind === "quote" ? (
+              <div className="flex items-center gap-3 w-full">
                 <Image
                   src={slide.data.avatar}
                   alt={slide.data.name}
@@ -136,48 +168,30 @@ function FeaturedQuote() {
                   </p>
                 </div>
               </div>
-            </>
-          ) : (
-            <>
-              <div className="mb-4">
-                <span className="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider text-stone-400">
-                  Sponsored by
-                </span>
-              </div>
-              <div className="min-h-[168px] md:min-h-[140px] flex flex-col justify-center">
-                <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white leading-tight">
-                  {slide.data.name}
-                </p>
-                <p className="mt-3 text-[15px] md:text-base text-stone-300 leading-relaxed">
-                  {slide.data.description}
-                </p>
-              </div>
-
-              <div className="mt-6 pt-5 border-t border-stone-700/60">
-                <a
-                  href={slide.data.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white hover:text-stone-300 transition-colors"
+            ) : (
+              <a
+                href={slide.data.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white hover:text-stone-300 transition-colors"
+              >
+                Visit {slide.data.name}
+                <svg
+                  className="h-3.5 w-3.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
                 >
-                  Visit {slide.data.name}
-                  <svg
-                    className="h-3.5 w-3.5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M13 7l5 5m0 0l-5 5m5-5H6"
-                    />
-                  </svg>
-                </a>
-              </div>
-            </>
-          )}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M13 7l5 5m0 0l-5 5m5-5H6"
+                  />
+                </svg>
+              </a>
+            )}
+          </div>
         </div>
       </div>
 
