@@ -85,26 +85,26 @@ function FeaturedQuote() {
             : "bg-white border border-stone-200 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-12px_rgba(0,0,0,0.08)]"
         }`}
       >
-        {/* Tail — border triangle */}
+        {/* Tail — right triangle with vertical edge on the LEFT.
+            Built from two stacked triangles: border behind, fill on top.
+            Uses right border = hypotenuse (transparent), top border = fill color. */}
         <div
           aria-hidden
-          className="absolute left-10 -bottom-[22px] w-0 h-0 transition-colors duration-500"
+          className="absolute left-10 -bottom-[36px] w-0 h-0 transition-colors duration-500"
           style={{
-            borderLeft: "22px solid transparent",
-            borderRight: "22px solid transparent",
-            borderTop: `22px solid ${
+            borderRight: "36px solid transparent",
+            borderTop: `36px solid ${
               slide.kind === "sponsor" ? "rgb(28, 25, 23)" : "rgb(231, 229, 228)"
             }`,
           }}
         />
-        {/* Tail — fill triangle covering the border triangle */}
+        {/* Fill triangle — slightly smaller, offset to cover the border except at the hypotenuse edge */}
         <div
           aria-hidden
-          className="absolute left-[41px] -bottom-[19px] w-0 h-0 transition-colors duration-500"
+          className="absolute left-10 -bottom-[34px] w-0 h-0 transition-colors duration-500"
           style={{
-            borderLeft: "21px solid transparent",
-            borderRight: "21px solid transparent",
-            borderTop: `21px solid ${
+            borderRight: "34px solid transparent",
+            borderTop: `34px solid ${
               slide.kind === "sponsor" ? "rgb(28, 25, 23)" : "#ffffff"
             }`,
           }}
