@@ -77,26 +77,36 @@ function FeaturedQuote() {
 
   return (
     <div className="relative">
-      {/* Callout card (speech bubble) */}
-      <div className="relative rounded-2xl border border-stone-200 bg-white p-7 md:p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-12px_rgba(0,0,0,0.08)]">
+      {/* Callout card — swaps treatment for quote vs sponsor */}
+      <div
+        className={`relative rounded-2xl p-7 md:p-8 transition-colors duration-500 ${
+          slide.kind === "sponsor"
+            ? "bg-stone-900 border border-stone-900 shadow-[0_1px_2px_rgba(0,0,0,0.08),0_12px_32px_-12px_rgba(12,10,9,0.35)]"
+            : "bg-white border border-stone-200 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-12px_rgba(0,0,0,0.08)]"
+        }`}
+      >
         {/* Tail — border triangle */}
         <div
           aria-hidden
-          className="absolute left-10 -bottom-[22px] w-0 h-0"
+          className="absolute left-10 -bottom-[22px] w-0 h-0 transition-colors duration-500"
           style={{
             borderLeft: "22px solid transparent",
             borderRight: "22px solid transparent",
-            borderTop: "22px solid rgb(231, 229, 228)",
+            borderTop: `22px solid ${
+              slide.kind === "sponsor" ? "rgb(28, 25, 23)" : "rgb(231, 229, 228)"
+            }`,
           }}
         />
         {/* Tail — fill triangle covering the border triangle */}
         <div
           aria-hidden
-          className="absolute left-[41px] -bottom-[19px] w-0 h-0"
+          className="absolute left-[41px] -bottom-[19px] w-0 h-0 transition-colors duration-500"
           style={{
             borderLeft: "21px solid transparent",
             borderRight: "21px solid transparent",
-            borderTop: "21px solid #ffffff",
+            borderTop: `21px solid ${
+              slide.kind === "sponsor" ? "rgb(28, 25, 23)" : "#ffffff"
+            }`,
           }}
         />
         <div
@@ -129,24 +139,26 @@ function FeaturedQuote() {
             </>
           ) : (
             <>
-              <p className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-4">
-                Sponsored
-              </p>
+              <div className="mb-4">
+                <span className="inline-flex items-center text-[11px] font-semibold uppercase tracking-wider text-stone-400">
+                  Sponsored by
+                </span>
+              </div>
               <div className="min-h-[168px] md:min-h-[140px] flex flex-col justify-center">
-                <p className="text-2xl md:text-3xl font-semibold tracking-tight text-stone-900 leading-tight">
+                <p className="text-2xl md:text-3xl font-semibold tracking-tight text-white leading-tight">
                   {slide.data.name}
                 </p>
-                <p className="mt-3 text-[15px] md:text-base text-stone-500 leading-relaxed">
+                <p className="mt-3 text-[15px] md:text-base text-stone-300 leading-relaxed">
                   {slide.data.description}
                 </p>
               </div>
 
-              <div className="mt-6 pt-5 border-t border-stone-100">
+              <div className="mt-6 pt-5 border-t border-stone-700/60">
                 <a
                   href={slide.data.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-stone-900 hover:text-stone-600 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-white hover:text-stone-300 transition-colors"
                 >
                   Visit {slide.data.name}
                   <svg
@@ -183,9 +195,7 @@ function FeaturedQuote() {
             }}
             className={`h-1.5 rounded-full transition-all ${
               i === index
-                ? s.kind === "sponsor"
-                  ? "w-5 bg-amber-500"
-                  : "w-5 bg-stone-900"
+                ? "w-5 bg-stone-900"
                 : "w-1.5 bg-stone-300 hover:bg-stone-400"
             }`}
             aria-label={
