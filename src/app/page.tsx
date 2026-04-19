@@ -39,8 +39,28 @@ function FeaturedQuote() {
 
   return (
     <div className="relative">
-      {/* Callout card */}
-      <div className="rounded-2xl border border-stone-200 bg-white p-7 md:p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-12px_rgba(0,0,0,0.08)]">
+      {/* Callout card (speech bubble) */}
+      <div className="relative rounded-2xl border border-stone-200 bg-white p-7 md:p-8 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-12px_rgba(0,0,0,0.08)]">
+        {/* Tail — border triangle */}
+        <div
+          aria-hidden
+          className="absolute left-10 -bottom-[14px] w-0 h-0"
+          style={{
+            borderLeft: "14px solid transparent",
+            borderRight: "14px solid transparent",
+            borderTop: "14px solid rgb(231, 229, 228)",
+          }}
+        />
+        {/* Tail — fill triangle covering the border triangle */}
+        <div
+          aria-hidden
+          className="absolute left-[41px] -bottom-[11px] w-0 h-0"
+          style={{
+            borderLeft: "13px solid transparent",
+            borderRight: "13px solid transparent",
+            borderTop: "13px solid #ffffff",
+          }}
+        />
         <div
           className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
         >
