@@ -114,6 +114,47 @@ function FeaturedQuote() {
   );
 }
 
+function RotatingSponsor() {
+  const sponsors = studyGroupsHome.sponsors.items;
+  const [index, setIndex] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    if (sponsors.length < 2) return;
+    const interval = setInterval(() => {
+      setVisible(false);
+      setTimeout(() => {
+        setIndex((i) => (i + 1) % sponsors.length);
+        setVisible(true);
+      }, 400);
+    }, 5500);
+    return () => clearInterval(interval);
+  }, [sponsors.length]);
+
+  const sponsor = sponsors[index];
+
+  return (
+    <div className="mt-10 pt-6 border-t border-stone-200/70 flex items-center gap-3 text-[12px] min-h-[28px]">
+      <span className="text-stone-400 uppercase tracking-wider font-semibold text-[11px] whitespace-nowrap">
+        {studyGroupsHome.sponsors.label}
+      </span>
+      <a
+        href={sponsor.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`group inline-flex items-baseline gap-2 min-w-0 transition-opacity duration-400 ${visible ? "opacity-100" : "opacity-0"}`}
+      >
+        <span className="font-semibold tracking-tight text-stone-900 group-hover:text-stone-700 transition-colors whitespace-nowrap">
+          {sponsor.name}
+        </span>
+        <span className="text-stone-400 group-hover:text-stone-500 transition-colors truncate">
+          {sponsor.description}
+        </span>
+      </a>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState<Record<string, string>>({});
@@ -178,26 +219,8 @@ export default function HomePage() {
             <div className="lg:pl-6">
               <FeaturedQuote />
 
-              {/* Sponsors — below quote */}
-              <div className="mt-10 pt-6 border-t border-stone-200/70 flex flex-wrap items-center gap-2 text-[12px]">
-                <span className="text-stone-400 uppercase tracking-wider font-semibold text-[11px] mr-1">
-                  {studyGroupsHome.sponsors.label}
-                </span>
-                {studyGroupsHome.sponsors.items.map((sponsor) => (
-                  <a
-                    key={sponsor.name}
-                    href={sponsor.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-stone-200 bg-white text-stone-700 hover:border-stone-300 hover:text-stone-900 transition-colors"
-                  >
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-stone-900" />
-                    <span className="font-semibold tracking-tight">
-                      {sponsor.name}
-                    </span>
-                  </a>
-                ))}
-              </div>
+              {/* Sponsors — rotating below quote */}
+              <RotatingSponsor />
             </div>
           </div>
         </div>
