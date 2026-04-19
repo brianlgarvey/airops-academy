@@ -6,7 +6,7 @@ export function StudyGroupsWhy() {
   return (
     <>
       {/* Pace / Problem */}
-      <section className="py-20 md:py-24 bg-stone-100 border-y border-stone-200/80">
+      <section className="py-20 md:py-24">
         <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <p className="text-[12px] font-semibold uppercase tracking-wider text-stone-400 mb-4">
@@ -23,7 +23,7 @@ export function StudyGroupsWhy() {
       </section>
 
       {/* Value grid */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 border-t border-stone-200/70">
         <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
             <p className="text-[12px] font-semibold uppercase tracking-wider text-stone-400 mb-4">
@@ -56,7 +56,7 @@ export function StudyGroupsWhy() {
       </section>
 
       {/* Two rules */}
-      <section className="py-20 md:py-28 bg-stone-100 border-y border-stone-200/80">
+      <section className="py-20 md:py-28 border-t border-stone-200/70">
         <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
           <div className="max-w-2xl mb-12">
             <p className="text-[12px] font-semibold uppercase tracking-wider text-stone-400 mb-4">
