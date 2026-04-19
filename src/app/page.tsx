@@ -37,112 +37,107 @@ function FeaturedQuote() {
 
   const highlight = hero.highlights[index];
 
-  // Peek avatars — all the others in the rotation
-  const peekAvatars = hero.highlights
-    .filter((_, i) => i !== index)
-    .slice(0, 6);
-
   return (
     <div className="relative">
-      {/* Decorative stage — soft gradient glow behind the avatar */}
       <div
-        aria-hidden
-        className="absolute -top-8 left-1/2 -translate-x-1/2 w-[340px] h-[340px] rounded-full bg-gradient-to-br from-primary-100/60 via-amber-50/40 to-transparent blur-3xl pointer-events-none"
-      />
+        className={`relative transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
+      >
+        {/* Explicit context label — what the quote is about */}
+        <div className="mb-4 flex items-center gap-2">
+          <span
+            className={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${
+              highlight.type === "build"
+                ? "bg-stone-900 text-white"
+                : "bg-amber-50 text-amber-800 border border-amber-200"
+            }`}
+          >
+            {highlight.type === "build" ? (
+              <>
+                <svg
+                  className="h-3 w-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
+                  />
+                </svg>
+                A participant built this
+              </>
+            ) : (
+              <>
+                <svg
+                  className="h-3 w-3"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2.5}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
+                  />
+                </svg>
+                A participant said this
+              </>
+            )}
+          </span>
+        </div>
 
-      {/* Scattered peek avatars (ambient decoration) */}
-      <div aria-hidden className="absolute inset-0 pointer-events-none">
-        {peekAvatars.map((person, i) => {
-          const positions = [
-            "top-0 left-4",
-            "top-8 right-0",
-            "top-28 -left-2",
-            "top-32 right-6",
-            "top-48 left-10",
-            "top-52 right-12",
-          ];
-          return (
-            <div
-              key={person.name}
-              className={`absolute ${positions[i]} transition-opacity duration-700`}
-              style={{ opacity: 0.5 }}
-            >
-              <Image
-                src={person.avatar}
-                alt=""
-                width={32 + (i % 2) * 4}
-                height={32 + (i % 2) * 4}
-                className="rounded-full object-cover ring-2 ring-white/80 shadow-sm"
-                unoptimized
-              />
-            </div>
-          );
-        })}
+        <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
+          &ldquo;{renderRichQuote(highlight.quote)}&rdquo;
+        </p>
+
+        <div className="mt-6 flex items-center gap-3">
+          <Image
+            src={highlight.avatar}
+            alt={highlight.name}
+            width={44}
+            height={44}
+            className="rounded-full object-cover ring-2 ring-white shadow-sm"
+            unoptimized
+          />
+          <div className="flex-1 min-w-0">
+            <p className="text-[14px] font-semibold text-stone-900">
+              {highlight.name}
+            </p>
+            <p className="text-[13px] text-stone-400">
+              {highlight.role}
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="relative flex flex-col items-center text-center pt-4 px-4">
-        {/* Featured avatar */}
-        <div
-          className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
-        >
-          <div className="relative inline-block">
-            <Image
-              src={highlight.avatar}
-              alt={highlight.name}
-              width={112}
-              height={112}
-              className="rounded-full object-cover ring-4 ring-white shadow-xl"
-              unoptimized
-            />
-            {/* Type badge on avatar */}
-            <span
-              className={`absolute -bottom-1 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-sm ${
-                highlight.type === "build"
-                  ? "bg-stone-900 text-white"
-                  : "bg-amber-50 text-amber-800 border border-amber-200"
-              }`}
-            >
-              {highlight.type === "build" ? "Built this" : "Feedback"}
-            </span>
-          </div>
-
-          {/* Name + role */}
-          <p className="mt-6 text-[15px] font-semibold text-stone-900">
-            {highlight.name}
-          </p>
-          <p className="text-[13px] text-stone-400">{highlight.role}</p>
-        </div>
-
-        {/* Quote */}
-        <div
-          className={`mt-6 max-w-sm transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
-        >
-          <p className="text-[15px] md:text-base text-stone-600 leading-relaxed">
-            &ldquo;{renderRichQuote(highlight.quote)}&rdquo;
-          </p>
-        </div>
-
-        {/* Dots */}
-        <div className="mt-6 flex gap-1.5">
-          {hero.highlights.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => {
-                setVisible(false);
-                setTimeout(() => {
-                  setIndex(i);
-                  setVisible(true);
-                }, 300);
-              }}
-              className={`h-1.5 rounded-full transition-all ${
-                i === index
-                  ? "w-5 bg-stone-900"
-                  : "w-1.5 bg-stone-300 hover:bg-stone-400"
-              }`}
-              aria-label={`Show highlight ${i + 1}`}
-            />
-          ))}
-        </div>
+      {/* Dots */}
+      <div className="mt-7 flex gap-1.5">
+        {hero.highlights.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => {
+              setVisible(false);
+              setTimeout(() => {
+                setIndex(i);
+                setVisible(true);
+              }, 300);
+            }}
+            className={`h-1.5 rounded-full transition-all ${
+              i === index
+                ? "w-5 bg-stone-900"
+                : "w-1.5 bg-stone-300 hover:bg-stone-400"
+            }`}
+            aria-label={`Show highlight ${i + 1}`}
+          />
+        ))}
       </div>
     </div>
   );
@@ -208,8 +203,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right — featured participant + quote with decorative stage */}
-            <div className="lg:pl-6 relative min-h-[440px]">
+            {/* Right — featured quote (seamless, no box) */}
+            <div className="lg:pl-6">
               <FeaturedQuote />
 
               {/* Sponsors — below quote */}
