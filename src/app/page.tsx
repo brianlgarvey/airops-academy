@@ -94,7 +94,7 @@ function FeaturedQuote() {
           </span>
         </div>
 
-        <p className="text-lg md:text-xl text-stone-700 leading-relaxed">
+        <p className="text-lg md:text-xl text-stone-700 leading-relaxed min-h-[168px] md:min-h-[140px]">
           &ldquo;{renderRichQuote(highlight.quote)}&rdquo;
         </p>
 
