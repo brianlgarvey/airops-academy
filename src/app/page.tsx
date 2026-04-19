@@ -161,7 +161,10 @@ export default function HomePage() {
   return (
     <>
       {/* Hero — proposition left, featured quote right */}
-      <section className="relative pt-28 pb-16 md:pt-36 md:pb-24">
+      <section
+        id="top"
+        className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-white border-b border-stone-200/70"
+      >
         <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left — proposition */}
@@ -234,7 +237,7 @@ export default function HomePage() {
       {/* Invite form at bottom */}
       <section
         id="invite-form"
-        className="py-20 md:py-28 bg-stone-100/60 border-t border-stone-200/60"
+        className="py-20 md:py-28 bg-stone-100 border-t border-stone-200/80"
       >
         <div className="mx-auto max-w-xl px-5 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
