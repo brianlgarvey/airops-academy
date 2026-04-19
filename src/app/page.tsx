@@ -20,6 +20,44 @@ function renderRichQuote(text: string) {
   });
 }
 
+// Build a unified slides array: a sponsor slide is inserted after every N quotes
+type QuoteSlide = { kind: "quote"; data: (typeof hero.highlights)[number] };
+type SponsorSlide = {
+  kind: "sponsor";
+  data: (typeof studyGroupsHome.sponsors.items)[number];
+};
+type Slide = QuoteSlide | SponsorSlide;
+
+function buildSlides(): Slide[] {
+  const quotesPerSponsor = 3;
+  const quotes: QuoteSlide[] = hero.highlights.map((h) => ({
+    kind: "quote",
+    data: h,
+  }));
+  const sponsors: SponsorSlide[] = studyGroupsHome.sponsors.items.map((s) => ({
+    kind: "sponsor",
+    data: s,
+  }));
+
+  const out: Slide[] = [];
+  let sponsorIdx = 0;
+  for (let i = 0; i < quotes.length; i++) {
+    out.push(quotes[i]);
+    if ((i + 1) % quotesPerSponsor === 0 && sponsors.length > 0) {
+      out.push(sponsors[sponsorIdx % sponsors.length]);
+      sponsorIdx++;
+    }
+  }
+  // If total quotes don't divide evenly, append any remaining sponsors
+  while (sponsorIdx < sponsors.length) {
+    out.push(sponsors[sponsorIdx % sponsors.length]);
+    sponsorIdx++;
+  }
+  return out;
+}
+
+const slides = buildSlides();
+
 function FeaturedQuote() {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -28,14 +66,14 @@ function FeaturedQuote() {
     const interval = setInterval(() => {
       setVisible(false);
       setTimeout(() => {
-        setIndex((i) => (i + 1) % hero.highlights.length);
+        setIndex((i) => (i + 1) % slides.length);
         setVisible(true);
       }, 500);
     }, 6500);
     return () => clearInterval(interval);
   }, []);
 
-  const highlight = hero.highlights[index];
+  const slide = slides[index];
 
   return (
     <div className="relative">
@@ -64,34 +102,76 @@ function FeaturedQuote() {
         <div
           className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
         >
-          <p className="text-lg md:text-xl text-stone-800 leading-relaxed min-h-[168px] md:min-h-[140px]">
-            &ldquo;{renderRichQuote(highlight.quote)}&rdquo;
-          </p>
+          {slide.kind === "quote" ? (
+            <>
+              <p className="text-lg md:text-xl text-stone-800 leading-relaxed min-h-[168px] md:min-h-[140px]">
+                &ldquo;{renderRichQuote(slide.data.quote)}&rdquo;
+              </p>
 
-          <div className="mt-6 pt-5 border-t border-stone-100 flex items-center gap-3">
-            <Image
-              src={highlight.avatar}
-              alt={highlight.name}
-              width={44}
-              height={44}
-              className="rounded-full object-cover ring-2 ring-white shadow-sm"
-              unoptimized
-            />
-            <div className="flex-1 min-w-0">
-              <p className="text-[14px] font-semibold text-stone-900">
-                {highlight.name}
+              <div className="mt-6 pt-5 border-t border-stone-100 flex items-center gap-3">
+                <Image
+                  src={slide.data.avatar}
+                  alt={slide.data.name}
+                  width={44}
+                  height={44}
+                  className="rounded-full object-cover ring-2 ring-white shadow-sm"
+                  unoptimized
+                />
+                <div className="flex-1 min-w-0">
+                  <p className="text-[14px] font-semibold text-stone-900">
+                    {slide.data.name}
+                  </p>
+                  <p className="text-[13px] text-stone-400">
+                    {slide.data.role}
+                  </p>
+                </div>
+              </div>
+            </>
+          ) : (
+            <>
+              <p className="text-[11px] font-semibold uppercase tracking-wider text-stone-400 mb-4">
+                Sponsored
               </p>
-              <p className="text-[13px] text-stone-400">
-                {highlight.role}
-              </p>
-            </div>
-          </div>
+              <div className="min-h-[168px] md:min-h-[140px] flex flex-col justify-center">
+                <p className="text-2xl md:text-3xl font-semibold tracking-tight text-stone-900 leading-tight">
+                  {slide.data.name}
+                </p>
+                <p className="mt-3 text-[15px] md:text-base text-stone-500 leading-relaxed">
+                  {slide.data.description}
+                </p>
+              </div>
+
+              <div className="mt-6 pt-5 border-t border-stone-100">
+                <a
+                  href={slide.data.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-stone-900 hover:text-stone-600 transition-colors"
+                >
+                  Visit {slide.data.name}
+                  <svg
+                    className="h-3.5 w-3.5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13 7l5 5m0 0l-5 5m5-5H6"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </>
+          )}
         </div>
       </div>
 
       {/* Dots */}
       <div className="mt-5 flex gap-1.5 justify-center">
-        {hero.highlights.map((_, i) => (
+        {slides.map((s, i) => (
           <button
             key={i}
             onClick={() => {
@@ -103,54 +183,19 @@ function FeaturedQuote() {
             }}
             className={`h-1.5 rounded-full transition-all ${
               i === index
-                ? "w-5 bg-stone-900"
+                ? s.kind === "sponsor"
+                  ? "w-5 bg-amber-500"
+                  : "w-5 bg-stone-900"
                 : "w-1.5 bg-stone-300 hover:bg-stone-400"
             }`}
-            aria-label={`Show highlight ${i + 1}`}
+            aria-label={
+              s.kind === "sponsor"
+                ? `Show sponsor ${s.data.name}`
+                : `Show highlight ${i + 1}`
+            }
           />
         ))}
       </div>
-    </div>
-  );
-}
-
-function RotatingSponsor() {
-  const sponsors = studyGroupsHome.sponsors.items;
-  const [index, setIndex] = useState(0);
-  const [visible, setVisible] = useState(true);
-
-  useEffect(() => {
-    if (sponsors.length < 2) return;
-    const interval = setInterval(() => {
-      setVisible(false);
-      setTimeout(() => {
-        setIndex((i) => (i + 1) % sponsors.length);
-        setVisible(true);
-      }, 400);
-    }, 5500);
-    return () => clearInterval(interval);
-  }, [sponsors.length]);
-
-  const sponsor = sponsors[index];
-
-  return (
-    <div className="mt-10 pt-6 border-t border-stone-200/70 flex items-center gap-3 text-[12px] min-h-[28px]">
-      <span className="text-stone-400 uppercase tracking-wider font-semibold text-[11px] whitespace-nowrap">
-        {studyGroupsHome.sponsors.label}
-      </span>
-      <a
-        href={sponsor.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`group inline-flex items-baseline gap-2 min-w-0 transition-opacity duration-400 ${visible ? "opacity-100" : "opacity-0"}`}
-      >
-        <span className="font-semibold tracking-tight text-stone-900 group-hover:text-stone-700 transition-colors whitespace-nowrap">
-          {sponsor.name}
-        </span>
-        <span className="text-stone-400 group-hover:text-stone-500 transition-colors truncate">
-          {sponsor.description}
-        </span>
-      </a>
     </div>
   );
 }
@@ -218,9 +263,6 @@ export default function HomePage() {
             {/* Right — featured quote (seamless, no box) */}
             <div className="lg:pl-6">
               <FeaturedQuote />
-
-              {/* Sponsors — rotating below quote */}
-              <RotatingSponsor />
             </div>
           </div>
         </div>
