@@ -64,58 +64,6 @@ function FeaturedQuote() {
         <div
           className={`transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
         >
-          {/* Explicit context label — what the quote is about */}
-          <div className="mb-5 flex items-center gap-2">
-            <span
-              className={`inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full ${
-                highlight.type === "build"
-                  ? "bg-stone-900 text-white"
-                  : "bg-amber-50 text-amber-800 border border-amber-200"
-              }`}
-            >
-              {highlight.type === "build" ? (
-                <>
-                  <svg
-                    className="h-3 w-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"
-                    />
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"
-                    />
-                  </svg>
-                  A participant built this
-                </>
-              ) : (
-                <>
-                  <svg
-                    className="h-3 w-3"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-                    />
-                  </svg>
-                  A participant said this
-                </>
-              )}
-            </span>
-          </div>
-
           <p className="text-lg md:text-xl text-stone-800 leading-relaxed min-h-[168px] md:min-h-[140px]">
             &ldquo;{renderRichQuote(highlight.quote)}&rdquo;
           </p>
