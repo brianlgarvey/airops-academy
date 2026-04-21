@@ -79,7 +79,7 @@ function FeaturedQuote() {
     <div className="relative">
       {/* Callout card — swaps treatment for quote vs sponsor */}
       <div
-        className={`relative rounded-2xl p-7 md:p-8 min-h-[340px] md:min-h-[360px] transition-colors duration-500 ${
+        className={`relative rounded-2xl p-7 md:p-8 h-[330px] md:h-[325px] transition-colors duration-500 ${
           slide.kind === "sponsor"
             ? "bg-stone-900 border border-stone-900 shadow-[0_1px_2px_rgba(0,0,0,0.08),0_12px_32px_-12px_rgba(12,10,9,0.35)]"
             : "bg-white border border-stone-200 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-12px_rgba(0,0,0,0.08)]"
@@ -123,8 +123,8 @@ function FeaturedQuote() {
             </span>
           </div>
 
-          {/* Body — matched min-height */}
-          <div className="min-h-[168px] md:min-h-[140px] flex flex-col justify-center">
+          {/* Body — fixed height so every slide is exactly the same */}
+          <div className="h-[140px] md:h-[108px] overflow-hidden flex flex-col justify-center">
             {slide.kind === "quote" ? (
               <p className="text-lg md:text-xl text-stone-800 leading-relaxed">
                 &ldquo;{renderRichQuote(slide.data.quote)}&rdquo;
