@@ -246,10 +246,10 @@ export default function HomePage() {
         id="top"
         className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-white border-b border-stone-200/70"
       >
-        <div className="mx-auto max-w-5xl px-5 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="mx-auto max-w-6xl px-5 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
             {/* Left — proposition */}
-            <div>
+            <div className="lg:col-span-2">
               <h1 className="text-4xl sm:text-5xl md:text-[3.25rem] font-semibold tracking-tight leading-[1.1] text-stone-900">
                 {studyGroupsHome.headline}
               </h1>
@@ -285,7 +285,7 @@ export default function HomePage() {
             </div>
 
             {/* Right — featured quote (seamless, no box) */}
-            <div className="lg:pl-6">
+            <div className="lg:col-span-3 lg:pl-6">
               <FeaturedQuote />
             </div>
           </div>
